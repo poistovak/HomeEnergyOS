@@ -1,0 +1,72 @@
+# HEOS Constitution
+
+## The Constitution of Home Energy Operating System
+
+### Article I — Explainability
+
+Every decision made by HEOS must be explainable.
+
+No hidden decisions.
+
+No black boxes.
+
+---
+
+### Article II — Safety
+
+Safety always overrides optimization.
+
+Comfort always overrides savings.
+
+---
+
+### Article III — Local First
+
+The intelligence belongs to the home.
+
+Cloud services are optional.
+
+---
+
+### Article IV — Vendor Neutrality
+
+No manufacturer shall receive special treatment.
+
+All vendors are equal.
+
+---
+
+### Article V — Modularity
+
+Everything is replaceable.
+
+Nothing is hardcoded.
+
+---
+
+### Article VI — Transparency
+
+Every Brain must publish:
+
+- Inputs
+- Outputs
+- Reasoning
+- Confidence
+
+---
+
+### Article VII — Human Override
+
+The owner of the house always has the final decision.
+
+HEOS advises.
+
+Humans decide.
+
+---
+
+### Article VIII — Continuous Learning
+
+HEOS evolves.
+
+Knowledge never stops growing.
