@@ -1,0 +1,128 @@
+# HEOS Vision
+
+## Home Energy Operating System
+
+> Energy is no longer just electricity.
+>
+> It is information.
+> It is prediction.
+> It is intelligence.
+
+---
+
+## Why HEOS exists
+
+Homes are becoming increasingly complex.
+
+Solar.
+Battery.
+Electric vehicles.
+Heat pumps.
+Dynamic electricity prices.
+Weather forecasts.
+
+Every device optimizes only itself.
+
+Nobody optimizes the home.
+
+HEOS exists to change that.
+
+---
+
+## Our mission
+
+Build an operating system for energy.
+
+Not another dashboard.
+
+Not another automation.
+
+An operating system.
+
+---
+
+## Core Principles
+
+### Explainable
+
+Every decision must have a reason.
+
+---
+
+### Vendor Independent
+
+No vendor lock-in.
+
+Every manufacturer should be replaceable.
+
+---
+
+### Local First
+
+The home owns its own intelligence.
+
+Cloud is optional.
+
+---
+
+### Safety First
+
+Comfort before optimization.
+
+Safety before savings.
+
+People before algorithms.
+
+---
+
+### Modular
+
+Everything is a module.
+
+Everything can evolve.
+
+Nothing is hardcoded.
+
+---
+
+## Architecture
+
+Reality
+
+↓
+
+Adapters
+
+↓
+
+Digital Twin
+
+↓
+
+Decision Engine
+
+↓
+
+Brains
+
+↓
+
+Executor
+
+↓
+
+Home
+
+---
+
+## Vision
+
+One house.
+
+One brain.
+
+One decision engine.
+
+One operating system.
+
+HEOS.
