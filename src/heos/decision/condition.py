@@ -1,8 +1,6 @@
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
-class Rule:
+class Condition:
 
-    name: str
-
-    priority: int
+    description: str
