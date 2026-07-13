@@ -1,0 +1,17 @@
+[project]
+name = "heos-core"
+version = "0.1.0"
+description = "Explainable energy decision engine for Home Assistant"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
