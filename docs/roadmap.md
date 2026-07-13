@@ -1,16 +1,21 @@
 # HEOS Roadmap
 
 ## Genesis
-Core architecture, Decision model, HouseState, tests.
+Core architecture, Decision model, HouseState and tests.
 
 ## Neuron
-Brain API, priorities, confidence aggregation.
+- Brain API,
+- Decision Engine,
+- Brain Orchestrator,
+- Digital Twin,
+- source quality and health,
+- confidence aggregation.
 
 ## Helios
 Solar forecasting and Fronius adapter.
 
 ## Fusion
-Wattpilot, Daikin and provider pricing.
+Wattpilot execution, Daikin optimization and provider pricing.
 
 ## Gaia
 HACS distribution and community adapters.
