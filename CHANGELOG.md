@@ -1,10 +1,10 @@
 # Changelog
 
-## 0.4.0 — HouseState
+## 0.5.0 — Milestone 1 Core
 
-- add unified immutable `HouseState`,
-- separate reality, intent, constraints, predictions and policy,
-- add control modes and optimization objectives,
-- add hard safety constraints,
-- add decision-readiness and Autopilot execution gates,
-- add RFC-0005 and tests.
+- add Core runtime configuration,
+- add synchronous Event Bus,
+- add vendor-independent Device Registry,
+- add deterministic Scheduler,
+- add HEOS Kernel tick lifecycle,
+- add milestone documentation and tests.
