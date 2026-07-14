@@ -1,0 +1,167 @@
+# RFC-0006 — Architecture Rules
+
+Status: Draft
+
+Author: HEOS
+
+---
+
+# Purpose
+
+This RFC defines the architectural rules that every HEOS component must follow.
+
+These rules are mandatory.
+
+---
+
+# Rule 1 — Clean Core
+
+The HEOS Core must never depend on any hardware vendor.
+
+Forbidden:
+
+- Fronius
+- Daikin
+- Victron
+- Tesla
+- MQTT
+- Modbus
+- Home Assistant
+
+The Core only knows:
+
+- Digital Twin
+- Brain
+- Decision
+- Executor
+
+---
+
+# Rule 2 — One Source of Truth
+
+Every physical value exists only once.
+
+Example:
+
+PV Power
+
+must be stored only inside the Digital Twin.
+
+---
+
+# Rule 3 — Read → Think → Decide → Execute
+
+The complete pipeline is:
+
+Reality
+
+↓
+
+Adapter
+
+↓
+
+Digital Twin
+
+↓
+
+Brain
+
+↓
+
+Decision Engine
+
+↓
+
+Executor
+
+↓
+
+Reality
+
+No component may bypass this flow.
+
+---
+
+# Rule 4 — Brains are Pure
+
+Brains are deterministic.
+
+Input:
+
+Digital Twin
+
+Output:
+
+Decision
+
+Brains shall never:
+
+- call APIs
+- access MQTT
+- access Home Assistant
+- write entities
+
+---
+
+# Rule 5 — Adapters Never Decide
+
+Adapters convert data.
+
+They never optimize.
+
+They never schedule.
+
+They never think.
+
+---
+
+# Rule 6 — Explainability
+
+Every Decision must include:
+
+- Reason
+- Confidence
+- Priority
+
+Every automated action must be explainable.
+
+---
+
+# Rule 7 — Human Override
+
+Human decisions always override HEOS.
+
+---
+
+# Rule 8 — Local First
+
+HEOS must operate without Internet.
+
+Cloud is optional.
+
+---
+
+# Rule 9 — Vendor Independence
+
+Replacing a hardware vendor must not require changing the Core.
+
+---
+
+# Rule 10 — Testability
+
+Every Brain must be executable using only a Digital Twin.
+
+Hardware shall never be required for unit tests.
+
+---
+
+# Summary
+
+Simple Core.
+
+Smart Brains.
+
+Reliable Decisions.
+
+HEOS.
