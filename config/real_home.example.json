@@ -1,0 +1,16 @@
+{
+  "dry_run": true,
+  "poll_interval_seconds": 30,
+  "entities": {
+    "pv_power": "sensor.REPLACE_FRONIUS_PV_POWER",
+    "house_power": "sensor.REPLACE_HOUSE_POWER",
+    "grid_power": "sensor.REPLACE_GRID_POWER",
+    "ev_soc": "sensor.REPLACE_OMODA_SOC",
+    "ev_connected": "binary_sensor.REPLACE_OMODA_CONNECTED",
+    "charger_power": "sensor.REPLACE_WATTPILOT_POWER",
+    "charger_current": "number.REPLACE_WATTPILOT_CURRENT",
+    "charger_enabled": "switch.REPLACE_WATTPILOT_CHARGING",
+    "outdoor_temperature": "sensor.REPLACE_OUTDOOR_TEMPERATURE",
+    "electricity_price": null
+  }
+}
