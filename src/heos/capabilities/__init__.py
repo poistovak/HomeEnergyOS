@@ -7,4 +7,5 @@ __all__ = [
     "CapabilityMetadata",
     "EnergyProducerCapability",
     "ProducerState",
+    "CapabilityRegistry",
 ]
