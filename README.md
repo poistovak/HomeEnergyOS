@@ -1,12 +1,16 @@
-# HEOS — Home Energy Operating System
+# HEOS Milestone 10 — Decision Compiler
 
-> Every decision must have a reason.
+Decision Compiler transforms a selected Future Scenario into a deterministic,
+verifiable Execution Plan.
 
-HEOS is an open-source, explainable, safety-first energy decision platform for Home Assistant.
+Pipeline:
 
-## Genesis goals
-- clean core architecture
-- immutable Decision model
-- normalized HouseState
-- deterministic EV charging recommendation
-- tests and CI
+Future Scenario
+      ↓
+Decision Compiler
+      ↓
+Safety Validator
+      ↓
+Execution Plan
+      ↓
+Executor
