@@ -14,10 +14,12 @@ class ProducerState:
 
 
 class EnergyProducerCapability(Capability):
-     id="energy_producer",
-    name="Energy Producer",
-    version="1.0",
-    description="..."
+    metadata = CapabilityMetadata(
+        id="energy_producer",
+        name="Energy Producer",
+        version="1.0",
+        description="Capability representing electrical energy production.",
+    )
 
     @abstractmethod
     def state(self) -> ProducerState:

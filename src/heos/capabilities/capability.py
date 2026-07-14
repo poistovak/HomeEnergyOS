@@ -6,17 +6,13 @@ from dataclasses import dataclass
 
 @dataclass(slots=True)
 class CapabilityMetadata:
+    id: str
     name: str
     version: str = "1.0"
     description: str = ""
 
 
 class Capability(ABC):
-    """
-    Base class for every HEOS capability.
-
-    Brains never communicate with concrete devices.
-    They communicate only with Capabilities.
-    """
+    """Base class for every HEOS capability."""
 
     metadata: CapabilityMetadata
