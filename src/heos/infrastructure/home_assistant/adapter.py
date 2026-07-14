@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from dataclasses import fields
 from datetime import UTC, datetime
 
 from .client import HomeAssistantClient
@@ -29,9 +30,7 @@ class HomeAssistantSnapshotAdapter:
             house_power_w=house,
             grid_power_w=grid,
             ev_soc_percent=self._optional_float(self._entities.ev_soc),
-            ev_connected=self._optional_bool(
-                self._entities.ev_connected
-            ),
+            ev_connected=self._optional_bool(self._entities.ev_connected),
             charger_power_w=self._optional_float(
                 self._entities.charger_power
             ),
@@ -49,9 +48,9 @@ class HomeAssistantSnapshotAdapter:
             ),
             collected_at=datetime.now(UTC),
             source_entities={
-                name: entity_id
-                for name, entity_id in vars(self._entities).items()
-                if entity_id is not None
+                item.name: entity_id
+                for item in fields(self._entities)
+                if (entity_id := getattr(self._entities, item.name)) is not None
             },
         )
 

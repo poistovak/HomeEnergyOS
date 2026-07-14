@@ -1,11 +1,42 @@
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
 .pytest_cache/
+.ruff_cache/
+.mypy_cache/
 .coverage
+htmlcov/
+
+# Virtual environments
 .venv/
-dist/
-build/
+venv/
+env/
+
+# Packaging
 *.egg-info/
+build/
+dist/
+
+# Editors and OS
 .vscode/
 .idea/
+.DS_Store
 Thumbs.db
+desktop.ini
+
+# Local archives and backups
+*.rar
+*.zip
+*.7z
+*.bak
+
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+secrets.yaml
+
+# Home Assistant local runtime files
+.storage/
+home-assistant_v2.db*
