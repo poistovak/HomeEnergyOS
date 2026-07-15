@@ -1,0 +1,10 @@
+HEOS Milestone 15 — local validation
+Date: 2026-07-15
+Python: 3.13.5
+pytest: 37 passed in 0.36s
+ruff: All checks passed
+compileall: passed
+
+Scope: the M15 drop-in patch was validated in isolation. The full public repository archive
+could not be cloned inside this execution environment because outbound DNS for git was blocked.
+The patch intentionally imports no Arbitration or Safety internals and adds only new files.

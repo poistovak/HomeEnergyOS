@@ -1,0 +1,8 @@
+PowerShell:
+
+cd "$HOME\Downloads"
+Remove-Item .\M15_HOTFIX -Recurse -Force -ErrorAction SilentlyContinue
+Expand-Archive .\HEOS_Milestone_15_Feedback_Engine_v1_2_HOTFIX.zip -DestinationPath .\M15_HOTFIX -Force
+cd .\M15_HOTFIX
+Set-ExecutionPolicy -Scope Process Bypass
+.\apply_m15.ps1

@@ -1,0 +1,17 @@
+HEOS Milestone 15 — v1.2 HOTFIX validation
+Date: 2026-07-15
+
+Fixed:
+- restored public actions_from_runtime_report()
+- restored public execution_status_from_runtime_report()
+- outcome_from_runtime_report() now delegates to those public adapters
+- added direct integration tests against the M11 RuntimeReport contract
+
+Validation performed:
+- M15 tests: 40 passed
+- M11 execution + M15 tests: 44 passed
+- Ruff: All checks passed
+- compileall: passed
+
+The historical local reconstruction of M1–M14 has two unrelated pre-existing failures
+in M4 and M9. They are not modified by this patch.
