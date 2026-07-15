@@ -1,46 +1,44 @@
-from heos.twin import (
-    Availability,
-    ChargerState,
-    DeviceHealth,
-    DigitalTwin,
-    EVState,
-    PowerFlow,
-    SourceQuality,
+from datetime import UTC, datetime, timedelta
+
+from heos.digital_twin import DigitalTwin, TwinControl, TwinDisturbance, TwinParameters, TwinState
+
+parameters = TwinParameters(
+    thermal_capacity_kwh_per_c=12.0,
+    heat_loss_kw_per_c=0.22,
+    hvac_cop=4.0,
+    battery_capacity_kwh=10.0,
+    battery_max_charge_kw=5.0,
+    battery_max_discharge_kw=5.0,
+    ev_capacity_kwh=34.0,
+    ev_max_charge_kw=3.6,
+    grid_max_import_kw=17.25,
+    grid_max_export_kw=10.0,
+    version="liptov-house-1",
 )
 
-twin = DigitalTwin(
-    power=PowerFlow(
-        pv_w=6800,
-        house_w=1500,
-        grid_w=-5300,
-        quality=SourceQuality(
-            confidence=0.98,
-            age_seconds=4,
-            source="home_assistant",
-        ),
-    ),
-    ev=EVState(
-        soc_percent=42,
-        connected=True,
-        range_km=52,
-        availability=Availability.ONLINE,
-    ),
-    charger=ChargerState(
-        connected=True,
-        charging=False,
-        power_w=0,
-        maximum_current_a=16,
-        phases=1,
-        availability=Availability.ONLINE,
-    ),
-    health=DeviceHealth(
-        states={
-            "fronius": Availability.ONLINE,
-            "wattpilot": Availability.ONLINE,
-            "omoda": Availability.ONLINE,
-            "daikin": Availability.ONLINE,
-        }
-    ),
+twin = DigitalTwin(parameters)
+initial = TwinState(
+    observed_at=datetime(2026, 7, 15, 12, 0, tzinfo=UTC),
+    indoor_temp_c=22.0,
+    battery_soc=0.45,
+    ev_soc=0.30,
 )
 
-print(twin.summary())
+trace = twin.simulate(
+    initial,
+    controls=(
+        TwinControl(battery_power_kw=2.0, ev_charge_kw=3.6),
+        TwinControl(battery_power_kw=1.0, ev_charge_kw=3.6),
+    ),
+    disturbances=(
+        TwinDisturbance(outdoor_temp_c=24.0, pv_kw=8.0, base_load_kw=1.2),
+        TwinDisturbance(outdoor_temp_c=25.0, pv_kw=6.0, base_load_kw=1.4),
+    ),
+    step_duration=timedelta(minutes=15),
+    generated_at=datetime.now(UTC),
+    metadata=(("scenario", "summer-pv-charge"),),
+)
+
+print(trace.trace_id)
+print(trace.final_state)
+print("feasible:", trace.feasible)

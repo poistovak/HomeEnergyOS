@@ -7,7 +7,7 @@ import pytest
 
 from heos.feedback.models import OutcomeClassification
 from heos.memory.models import PatternSummary
-from heos.twin import (
+from heos.digital_twin import (
     ConstraintCode,
     ConstraintViolation,
     CorrectionVector,

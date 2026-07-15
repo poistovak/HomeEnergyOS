@@ -1,7 +1,0 @@
-HEOS Milestone 17 - Digital Twin
-Package-local validation:
-- 57 M17 tests passed
-- Ruff: all checks passed
-- Python compileall: passed
-
-The full HomeEnergyOS suite must be confirmed after installation in the target repository.
