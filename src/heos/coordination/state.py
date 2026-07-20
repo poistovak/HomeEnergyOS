@@ -1,0 +1,14 @@
+﻿from enum import Enum
+
+
+class CoordinationState(str, Enum):
+    CREATED = "CREATED"
+    PLANNING = "PLANNING"
+    ARBITRATING = "ARBITRATING"
+    VALIDATING = "VALIDATING"
+    EXECUTING = "EXECUTING"
+    VERIFYING = "VERIFYING"
+    COMPLETED = "COMPLETED"
+    FAILED = "FAILED"
+    CANCELLED = "CANCELLED"
+    TIMED_OUT = "TIMED_OUT"
