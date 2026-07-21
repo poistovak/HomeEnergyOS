@@ -1,21 +1,9 @@
-﻿from heos.coordination import CoordinationContext, CoordinationState
+﻿from datetime import UTC
 
-
-def test_default_context():
-    ctx = CoordinationContext(cycle_id="cycle-1")
-
-    assert ctx.cycle_id == "cycle-1"
-    assert ctx.state == "CREATED"
-    assert ctx.request == {}
-    assert ctx.metadata == {}
-
-
-def test_state_enum():
-    assert CoordinationState.CREATED.value == "CREATED"
-    assert CoordinationState.EXECUTING.value == "EXECUTING"
-from datetime import UTC
-
-from heos.coordination.context import CoordinationContext
+from heos.coordination import (
+    CoordinationContext,
+    CoordinationState,
+)
 
 
 def test_context_defaults():
@@ -45,11 +33,23 @@ def test_context_custom_values():
 
 
 def test_context_default_dicts_are_independent():
-    a = CoordinationContext(cycle_id="a")
-    b = CoordinationContext(cycle_id="b")
+    first = CoordinationContext(cycle_id="a")
+    second = CoordinationContext(cycle_id="b")
 
-    a.request["x"] = 1
-    a.metadata["y"] = 2
+    first.request["x"] = 1
+    first.metadata["y"] = 2
 
-    assert b.request == {}
-    assert b.metadata == {}
+    assert second.request == {}
+    assert second.metadata == {}
+
+
+def test_state_enum():
+    assert CoordinationState.CREATED.value == "CREATED"
+    assert CoordinationState.EXECUTING.value == "EXECUTING"
+
+
+def test_default_context():
+    ctx = CoordinationContext(cycle_id="cycle-1")
+
+    assert ctx.cycle_id == "cycle-1"
+    assert ctx.state == "CREATED"
