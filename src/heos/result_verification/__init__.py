@@ -1,7 +1,7 @@
 from .learning import LearningRecord
 from .memory import LearningMemory
 from .engine import ResultVerificationEngine
-from .models import (
+from .ledger import VerificationLedger
     Observation,
     ResultExpectation,
     VerificationAction,
