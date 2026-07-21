@@ -1,82 +1,60 @@
+from datetime import UTC, datetime
+
 import pytest
 
-from heos.result_verification import ResultExpectation
+from heos.forecast import (
+    ForecastPoint,
+    ForecastSeries,
+    ForecastValueKind,
+)
 
 
-class ForecastVerificationRequest:
-    def __init__(
-        self,
-        forecast_id: str,
-        target: str,
-        predicted_value: float,
-        tolerance: float,
-    ):
-        self.forecast_id = forecast_id
-        self.target = target
-        self.predicted_value = predicted_value
-        self.tolerance = tolerance
+def make_series():
+    now = datetime.now(UTC)
 
-        if not forecast_id.strip():
-            raise ValueError("forecast_id empty")
-
-        if not target.strip():
-            raise ValueError("target empty")
-
-        if tolerance < 0:
-            raise ValueError("tolerance negative")
-
-        if predicted_value != predicted_value:
-            raise ValueError("predicted_value invalid")
-
-    def to_expectation(self) -> ResultExpectation:
-        return ResultExpectation(
-            command_id=self.forecast_id,
-            target=self.target,
-            expected_value=self.predicted_value,
-            absolute_tolerance=self.tolerance,
-        )
-
-
-def test_forecast_request_creates_expectation():
-    request = ForecastVerificationRequest(
-        forecast_id="forecast-001",
-        target="pv_power_kw",
-        predicted_value=6.2,
-        tolerance=0.5,
+    return ForecastSeries(
+        series_id="pv-001",
+        kind=ForecastValueKind.PV_POWER_W,
+        source="static",
+        points=(
+            ForecastPoint(
+                timestamp=now,
+                value=6200.0,
+                confidence=0.95,
+            ),
+        ),
     )
 
-    expectation = request.to_expectation()
 
-    assert expectation.command_id == "forecast-001"
-    assert expectation.target == "pv_power_kw"
-    assert expectation.expected_value == 6.2
+def test_forecast_series_is_ready_for_verification():
+    series = make_series()
+
+    assert series.kind == ForecastValueKind.PV_POWER_W
+    assert series.points[0].value == 6200.0
 
 
-def test_forecast_request_rejects_empty_id():
+def test_forecast_rejects_empty_series():
     with pytest.raises(ValueError):
-        ForecastVerificationRequest(
-            forecast_id="",
-            target="pv_power_kw",
-            predicted_value=5.0,
-            tolerance=0.5,
+        ForecastSeries(
+            series_id="pv",
+            kind=ForecastValueKind.PV_POWER_W,
+            source="test",
+            points=(),
         )
 
 
-def test_forecast_request_rejects_negative_tolerance():
+def test_forecast_point_requires_timezone():
     with pytest.raises(ValueError):
-        ForecastVerificationRequest(
-            forecast_id="forecast-001",
-            target="pv_power_kw",
-            predicted_value=5.0,
-            tolerance=-1.0,
+        ForecastPoint(
+            timestamp=datetime.now(),
+            value=10.0,
         )
 
 
-def test_forecast_request_rejects_nan_prediction():
+def test_forecast_confidence_contract():
     with pytest.raises(ValueError):
-        ForecastVerificationRequest(
-            forecast_id="forecast-001",
-            target="pv_power_kw",
-            predicted_value=float("nan"),
-            tolerance=0.5,
+        ForecastPoint(
+            timestamp=datetime.now(UTC),
+            value=10.0,
+            confidence=2.0,
         )
