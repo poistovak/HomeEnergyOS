@@ -1,7 +1,4 @@
-"""HEOS M28 — closed-loop result verification."""
-
 from .engine import ResultVerificationEngine
-from .ledger import VerificationLedger
 from .models import (
     Observation,
     ResultExpectation,
@@ -11,15 +8,19 @@ from .models import (
 )
 from .policy import ResultVerificationPolicy
 from .verifier import ResultVerifier
+from .ledger import VerificationLedger
+from .learning import LearningRecord
+
 
 __all__ = [
     "Observation",
     "ResultExpectation",
+    "VerificationAction",
+    "VerificationDecision",
+    "VerificationStatus",
     "ResultVerificationEngine",
     "ResultVerificationPolicy",
     "ResultVerifier",
-    "VerificationAction",
-    "VerificationDecision",
     "VerificationLedger",
-    "VerificationStatus",
+    "LearningRecord",
 ]
