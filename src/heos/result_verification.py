@@ -3,20 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime
 import math
-from __future__ import annotations
 
-from dataclasses import dataclass
-from datetime import datetime
-import mathPredictionRealityComparison
 
-- prediction_id
-- predicted_value
-- actual_value
-- absolute_error
-- relative_error
-- timestamp
-- metric_name
-- passed
 @dataclass(frozen=True, slots=True)
 class PredictionRealityComparison:
     prediction_id: str
