@@ -1,3 +1,5 @@
+from .learning import LearningRecord
+from .memory import LearningMemory
 from .engine import ResultVerificationEngine
 from .models import (
     Observation,
@@ -23,4 +25,5 @@ __all__ = [
     "ResultVerifier",
     "VerificationLedger",
     "LearningRecord",
+    "LearningMemory",
 ]
