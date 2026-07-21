@@ -1,7 +1,8 @@
-from .learning import LearningRecord
-from .memory import LearningMemory
 from .engine import ResultVerificationEngine
 from .ledger import VerificationLedger
+from .learning import LearningRecord
+from .memory import LearningMemory
+from .models import (
     Observation,
     ResultExpectation,
     VerificationAction,
@@ -10,8 +11,6 @@ from .ledger import VerificationLedger
 )
 from .policy import ResultVerificationPolicy
 from .verifier import ResultVerifier
-from .ledger import VerificationLedger
-from .learning import LearningRecord
 
 
 __all__ = [
