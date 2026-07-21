@@ -2,6 +2,7 @@ from .engine import ResultVerificationEngine
 from .ledger import VerificationLedger
 from .learning import LearningRecord
 from .learning_query import LearningQuery
+from .learning_similarity import LearningSimilarity
 from .memory import LearningMemory
 from .models import (
     Observation,
@@ -27,4 +28,5 @@ __all__ = [
     "LearningRecord",
     "LearningMemory",
     "LearningQuery",
+    "LearningSimilarity",
 ]
