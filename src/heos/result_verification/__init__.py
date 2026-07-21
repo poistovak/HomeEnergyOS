@@ -12,6 +12,7 @@ from .models import (
     VerificationStatus,
 )
 from .policy import ResultVerificationPolicy
+from .retrieval import LearningRetrieval
 from .verifier import ResultVerifier
 
 
@@ -29,4 +30,5 @@ __all__ = [
     "LearningMemory",
     "LearningQuery",
     "LearningSimilarity",
+    "LearningRetrieval",
 ]
