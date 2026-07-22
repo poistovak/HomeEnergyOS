@@ -32,6 +32,11 @@ from .decision_rank import (
     DecisionMemoryRanker,
 )
 
+from .decision_recommendation import (
+    DecisionRecommendation,
+    DecisionMemoryRecommender,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -53,4 +58,6 @@ __all__ = [
     "DecisionMemoryQuery",
     "DecisionRank",
     "DecisionMemoryRanker",
+    "DecisionRecommendation",
+    "DecisionMemoryRecommender",
 ]
