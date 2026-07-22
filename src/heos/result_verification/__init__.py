@@ -52,6 +52,10 @@ from .decision_confidence import (
     DecisionConfidenceEngine,
 )
 
+from .decision_trust import (
+    DecisionTrust,
+    DecisionTrustEngine,
+)
 
 __all__ = [
     "Observation",
@@ -82,4 +86,6 @@ __all__ = [
     "DecisionMemoryConsolidator",
     "DecisionConfidence",
     "DecisionConfidenceEngine",
+    "DecisionTrust",
+    "DecisionTrustEngine",
 ]
