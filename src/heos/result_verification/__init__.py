@@ -22,6 +22,11 @@ from .decision_memory import (
     DecisionMemoryRecord,
 )
 
+from .decision_query import (
+    DecisionQuery,
+    DecisionMemoryQuery,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -39,4 +44,6 @@ __all__ = [
     "LearningRank",
     "DecisionMemory",
     "DecisionMemoryRecord",
+    "DecisionQuery",
+    "DecisionMemoryQuery",
 ]
