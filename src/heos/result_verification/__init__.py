@@ -47,6 +47,11 @@ from .decision_consolidation import (
     DecisionMemoryConsolidator,
 )
 
+from .decision_confidence import (
+    DecisionConfidence,
+    DecisionConfidenceEngine,
+)
+
 
 __all__ = [
     "Observation",
@@ -75,4 +80,6 @@ __all__ = [
     "DecisionFeedbackMemory",
     "ConsolidatedDecisionMemory",
     "DecisionMemoryConsolidator",
+    "DecisionConfidence",
+    "DecisionConfidenceEngine",
 ]
