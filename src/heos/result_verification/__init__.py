@@ -37,6 +37,11 @@ from .decision_recommendation import (
     DecisionMemoryRecommender,
 )
 
+from .decision_feedback import (
+    DecisionFeedback,
+    DecisionFeedbackMemory,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -60,4 +65,6 @@ __all__ = [
     "DecisionMemoryRanker",
     "DecisionRecommendation",
     "DecisionMemoryRecommender",
+    "DecisionFeedback",
+    "DecisionFeedbackMemory",
 ]
