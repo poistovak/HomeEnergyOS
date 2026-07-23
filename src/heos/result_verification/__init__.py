@@ -132,6 +132,11 @@ from .goal_strategy import (
     GoalStrategyEngine,
 )
 
+from .constraint_reasoning import (
+    ConstraintResult,
+    ConstraintReasoningEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -193,4 +198,6 @@ __all__ = [
     "CounterfactualReasoningEngine",
     "GoalStrategy",
     "GoalStrategyEngine",
+    "ConstraintResult",
+    "ConstraintReasoningEngine",
 ]

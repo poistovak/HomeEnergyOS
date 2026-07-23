@@ -1,19 +1,16 @@
 from heos.result_verification import (
-    DecisionExplanationEngine,
+    GoalStrategyEngine,
 )
 
 
-def test_explanation_contains_reasons():
+def test_goal_strategy_creates_goal():
 
-    engine = DecisionExplanationEngine()
+    engine = GoalStrategyEngine()
 
-    result = engine.explain(
-        "charge",
-        [
-            "high PV surplus",
-            "battery available",
-        ],
+    result = engine.evaluate(
+        "maximize_self_consumption",
+        0.9,
     )
 
-    assert result.decision == "charge"
-    assert len(result.reasons) == 2
+    assert result.goal == "maximize_self_consumption"
+    assert result.priority == 0.9
