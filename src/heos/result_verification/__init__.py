@@ -92,6 +92,11 @@ from .context_similarity import (
     ContextSimilarityEngine,
 )
 
+from .experience_retrieval import (
+    ExperienceMatch,
+    ExperienceRetrievalEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -137,4 +142,6 @@ __all__ = [
     "ContextMatcher",
     "ContextSimilarity",
     "ContextSimilarityEngine",
+    "ExperienceMatch",
+    "ExperienceRetrievalEngine",
 ]
