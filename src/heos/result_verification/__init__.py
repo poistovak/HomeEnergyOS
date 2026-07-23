@@ -97,6 +97,11 @@ from .experience_retrieval import (
     ExperienceRetrievalEngine,
 )
 
+from .experience_ranking import (
+    RankedExperience,
+    ExperienceRankingEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -144,4 +149,6 @@ __all__ = [
     "ContextSimilarityEngine",
     "ExperienceMatch",
     "ExperienceRetrievalEngine",
+    "RankedExperience",
+    "ExperienceRankingEngine",
 ]
