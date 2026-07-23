@@ -157,6 +157,11 @@ from .reasoning_confidence import (
     ReasoningConfidenceEngine,
 )
 
+from .reasoning_orchestrator import (
+    ReasoningResult,
+    ReasoningOrchestrator,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -228,4 +233,6 @@ __all__ = [
     "StrategyMemoryEngine",
     "ReasoningConfidence",
     "ReasoningConfidenceEngine",
+    "ReasoningResult",
+    "ReasoningOrchestrator",
 ]
