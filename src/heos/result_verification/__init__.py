@@ -147,6 +147,11 @@ from .multi_option_planner import (
     MultiOptionPlanner,
 )
 
+from .strategy_memory import (
+    StrategyMemory,
+    StrategyMemoryEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -214,4 +219,6 @@ __all__ = [
     "CausalRelationshipEngine",
     "PlanOption",
     "MultiOptionPlanner",
+    "StrategyMemory",
+    "StrategyMemoryEngine",
 ]
