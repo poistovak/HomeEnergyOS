@@ -167,6 +167,11 @@ from .adaptive_learning import (
     AdaptiveLearningEngine,
 )
 
+from .learning_feedback_loop import (
+    FeedbackResult,
+    LearningFeedbackLoopEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -242,4 +247,6 @@ __all__ = [
     "ReasoningOrchestrator",
     "LearningSignal",
     "AdaptiveLearningEngine",
+    "FeedbackResult",
+    "LearningFeedbackLoopEngine",
 ]
