@@ -152,6 +152,11 @@ from .strategy_memory import (
     StrategyMemoryEngine,
 )
 
+from .reasoning_confidence import (
+    ReasoningConfidence,
+    ReasoningConfidenceEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -221,4 +226,6 @@ __all__ = [
     "MultiOptionPlanner",
     "StrategyMemory",
     "StrategyMemoryEngine",
+    "ReasoningConfidence",
+    "ReasoningConfidenceEngine",
 ]
