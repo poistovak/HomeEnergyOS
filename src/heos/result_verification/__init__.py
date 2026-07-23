@@ -122,6 +122,11 @@ from .decision_simulation import (
     DecisionSimulationEngine,
 )
 
+from .counterfactual_reasoning import (
+    CounterfactualResult,
+    CounterfactualReasoningEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -179,4 +184,6 @@ __all__ = [
     "DecisionExplanationEngine",
     "SimulationResult",
     "DecisionSimulationEngine",
+    "CounterfactualResult",
+    "CounterfactualReasoningEngine",
 ]
