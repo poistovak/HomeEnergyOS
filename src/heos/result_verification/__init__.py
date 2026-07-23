@@ -112,6 +112,11 @@ from .decision_orchestrator import (
     DecisionIntelligenceOrchestrator,
 )
 
+from .decision_explanation import (
+    DecisionExplanation,
+    DecisionExplanationEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -165,4 +170,6 @@ __all__ = [
     "ExperienceSynthesisEngine",
     "DecisionOutcome",
     "DecisionIntelligenceOrchestrator",
+    "DecisionExplanation",
+    "DecisionExplanationEngine",
 ]
