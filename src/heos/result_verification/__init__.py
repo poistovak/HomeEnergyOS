@@ -82,6 +82,11 @@ from .decision_context import (
     DecisionContextMemory,
 )
 
+from .context_matching import (
+    ContextMatch,
+    ContextMatcher,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -123,4 +128,6 @@ __all__ = [
     "PatternMemoryRecord",
     "DecisionContext",
     "DecisionContextMemory",
+    "ContextMatch",
+    "ContextMatcher",
 ]
