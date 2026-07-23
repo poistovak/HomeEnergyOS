@@ -107,6 +107,11 @@ from .experience_synthesis import (
     ExperienceSynthesisEngine,
 )
 
+from .decision_orchestrator import (
+    DecisionOutcome,
+    DecisionIntelligenceOrchestrator,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -158,4 +163,6 @@ __all__ = [
     "ExperienceRankingEngine",
     "ExperienceSynthesis",
     "ExperienceSynthesisEngine",
+    "DecisionOutcome",
+    "DecisionIntelligenceOrchestrator",
 ]
