@@ -172,6 +172,11 @@ from .learning_feedback_loop import (
     LearningFeedbackLoopEngine,
 )
 
+from .self_improvement import (
+    ImprovementProposal,
+    SelfImprovementEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -249,4 +254,6 @@ __all__ = [
     "AdaptiveLearningEngine",
     "FeedbackResult",
     "LearningFeedbackLoopEngine",
+    "ImprovementProposal",
+    "SelfImprovementEngine",
 ]
