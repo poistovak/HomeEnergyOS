@@ -162,6 +162,11 @@ from .reasoning_orchestrator import (
     ReasoningOrchestrator,
 )
 
+from .adaptive_learning import (
+    LearningSignal,
+    AdaptiveLearningEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -235,4 +240,6 @@ __all__ = [
     "ReasoningConfidenceEngine",
     "ReasoningResult",
     "ReasoningOrchestrator",
+    "LearningSignal",
+    "AdaptiveLearningEngine",
 ]
