@@ -142,6 +142,11 @@ from .causal_relationship import (
     CausalRelationshipEngine,
 )
 
+from .multi_option_planner import (
+    PlanOption,
+    MultiOptionPlanner,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -207,4 +212,6 @@ __all__ = [
     "ConstraintReasoningEngine",
     "CausalRelationship",
     "CausalRelationshipEngine",
+    "PlanOption",
+    "MultiOptionPlanner",
 ]
