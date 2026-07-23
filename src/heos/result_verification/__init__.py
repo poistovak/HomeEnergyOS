@@ -137,6 +137,11 @@ from .constraint_reasoning import (
     ConstraintReasoningEngine,
 )
 
+from .causal_relationship import (
+    CausalRelationship,
+    CausalRelationshipEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -200,4 +205,6 @@ __all__ = [
     "GoalStrategyEngine",
     "ConstraintResult",
     "ConstraintReasoningEngine",
+    "CausalRelationship",
+    "CausalRelationshipEngine",
 ]
