@@ -177,6 +177,11 @@ from .self_improvement import (
     SelfImprovementEngine,
 )
 
+from .adaptation_strategy import (
+    AdaptationDecision,
+    AdaptationStrategyEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -256,4 +261,6 @@ __all__ = [
     "LearningFeedbackLoopEngine",
     "ImprovementProposal",
     "SelfImprovementEngine",
+    "AdaptationDecision",
+    "AdaptationStrategyEngine"
 ]
