@@ -87,6 +87,11 @@ from .context_matching import (
     ContextMatcher,
 )
 
+from .context_similarity import (
+    ContextSimilarity,
+    ContextSimilarityEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -130,4 +135,6 @@ __all__ = [
     "DecisionContextMemory",
     "ContextMatch",
     "ContextMatcher",
+    "ContextSimilarity",
+    "ContextSimilarityEngine",
 ]
