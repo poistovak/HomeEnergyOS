@@ -62,6 +62,11 @@ from .decision_trust_decay import (
     DecisionTrustDecayEngine,
 )
 
+from .decision_evolution import (
+    DecisionEvolution,
+    DecisionEvolutionEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -95,4 +100,6 @@ __all__ = [
     "DecisionTrustEngine",
     "TrustDecayResult",
     "DecisionTrustDecayEngine",
+    "DecisionEvolution",
+    "DecisionEvolutionEngine",
 ]
