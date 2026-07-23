@@ -72,6 +72,11 @@ from .decision_pattern import (
     DecisionPatternEngine,
 )
 
+from .pattern_memory import (
+    PatternMemory,
+    PatternMemoryRecord,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
