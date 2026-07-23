@@ -114,4 +114,6 @@ __all__ = [
     "DecisionEvolutionEngine",
     "DecisionPattern",
     "DecisionPatternEngine",
+    "PatternMemory",
+    "PatternMemoryRecord",
 ]
