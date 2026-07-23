@@ -102,6 +102,11 @@ from .experience_ranking import (
     ExperienceRankingEngine,
 )
 
+from .experience_synthesis import (
+    ExperienceSynthesis,
+    ExperienceSynthesisEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -151,4 +156,6 @@ __all__ = [
     "ExperienceRetrievalEngine",
     "RankedExperience",
     "ExperienceRankingEngine",
+    "ExperienceSynthesis",
+    "ExperienceSynthesisEngine",
 ]
