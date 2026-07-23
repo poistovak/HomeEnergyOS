@@ -127,6 +127,11 @@ from .counterfactual_reasoning import (
     CounterfactualReasoningEngine,
 )
 
+from .goal_strategy import (
+    GoalStrategy,
+    GoalStrategyEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -186,4 +191,6 @@ __all__ = [
     "DecisionSimulationEngine",
     "CounterfactualResult",
     "CounterfactualReasoningEngine",
+    "GoalStrategy",
+    "GoalStrategyEngine",
 ]
