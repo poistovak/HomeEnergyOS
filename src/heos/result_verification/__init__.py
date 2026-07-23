@@ -67,6 +67,11 @@ from .decision_evolution import (
     DecisionEvolutionEngine,
 )
 
+from .decision_pattern import (
+    DecisionPattern,
+    DecisionPatternEngine,
+)
+
 __all__ = [
     "Observation",
     "ResultExpectation",
@@ -102,4 +107,6 @@ __all__ = [
     "DecisionTrustDecayEngine",
     "DecisionEvolution",
     "DecisionEvolutionEngine",
+    "DecisionPattern",
+    "DecisionPatternEngine",
 ]
