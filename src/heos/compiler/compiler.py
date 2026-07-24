@@ -1,6 +1,7 @@
 from .execution_plan import ExecutionPlan
 from .execution_step import ExecutionStep, StepType
 
+
 class DecisionCompiler:
     def compile(self, scenario_id:str)->ExecutionPlan:
         if scenario_id=="charge_ev_now":

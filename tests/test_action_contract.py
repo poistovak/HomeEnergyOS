@@ -2,7 +2,6 @@ import pytest
 
 from heos.domain.decision import Action
 
-
 EXPECTED_ACTIONS = (
     "CHARGE",
     "PREPARE",

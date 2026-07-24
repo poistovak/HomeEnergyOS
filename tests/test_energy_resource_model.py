@@ -1,7 +1,12 @@
 from heos.resources import (
-    EnergyCarrier, EnergyFlow, EnergyResource, ResourceGraph,
-    ResourceIdentity, ResourceKind
+    EnergyCarrier,
+    EnergyFlow,
+    EnergyResource,
+    ResourceGraph,
+    ResourceIdentity,
+    ResourceKind,
 )
+
 
 def make_resource(resource_id: str, name: str, kind: ResourceKind, *caps: str) -> EnergyResource:
     return EnergyResource(

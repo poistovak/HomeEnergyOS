@@ -2,9 +2,9 @@ from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 
 from heos.release_gate import (
-    OperationMode,
     OperationalReleaseEngine,
     OperationalRequest,
+    OperationMode,
     ReadinessEvidence,
     ReleasePolicy,
     standard_manifest,

@@ -2,7 +2,6 @@ from heos.compiler.compiler import DecisionCompiler
 from heos.kernel import EnergyBalance, KernelHealth, KernelSnapshot
 from heos.safety import SafetyContext, SafetyEngine
 
-
 plan = DecisionCompiler().compile("charge_ev_now")
 
 snapshot = KernelSnapshot(

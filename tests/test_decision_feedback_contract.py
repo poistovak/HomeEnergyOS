@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from heos.result_verification import (
     DecisionFeedback,
@@ -15,7 +15,7 @@ def test_feedback_memory_stores_result():
         recommendation="increase_power",
         outcome="SUCCESS",
         success=True,
-        created_at=datetime.now(timezone.utc),
+        created_at=datetime.now(UTC),
     )
 
     memory.add(feedback)
@@ -34,7 +34,7 @@ def test_successful_feedback_filter():
             recommendation="charge",
             outcome="SUCCESS",
             success=True,
-            created_at=datetime.now(timezone.utc),
+            created_at=datetime.now(UTC),
         )
     )
 
@@ -44,7 +44,7 @@ def test_successful_feedback_filter():
             recommendation="charge",
             outcome="FAILED",
             success=False,
-            created_at=datetime.now(timezone.utc),
+            created_at=datetime.now(UTC),
         )
     )
 

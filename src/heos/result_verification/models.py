@@ -1,10 +1,10 @@
 from __future__ import annotations
 
+import json
+import math
 from dataclasses import dataclass
 from datetime import datetime
 from enum import StrEnum
-import json
-import math
 
 
 class VerificationStatus(StrEnum):
@@ -93,11 +93,10 @@ class Observation:
         if not math.isfinite(self.value):
             raise ValueError("value must be finite")
 
-        if isinstance(self.observed_at, datetime):
-            if self.observed_at.tzinfo is None:
-                raise ValueError(
-                    "observed_at must be timezone-aware"
-                )
+        if isinstance(self.observed_at, datetime) and self.observed_at.tzinfo is None:
+            raise ValueError(
+                "observed_at must be timezone-aware"
+            )
 
         if not 0.0 <= self.quality <= 1.0:
             raise ValueError(
@@ -138,7 +137,7 @@ class VerificationDecision:
         attempts_used: int,
         reasons: tuple[str, ...],
         policy_version: str,
-    ) -> "VerificationDecision":
+    ) -> VerificationDecision:
         return cls(
             command_id=command_id,
             target=target,

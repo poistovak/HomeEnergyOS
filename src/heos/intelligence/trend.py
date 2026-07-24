@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
+from collections.abc import Sequence
 from dataclasses import dataclass
 from enum import StrEnum
 from statistics import fmean
-from typing import Sequence
 
 
 class TrendDirection(StrEnum):

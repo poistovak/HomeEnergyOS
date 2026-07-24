@@ -1,10 +1,10 @@
 from __future__ import annotations
 
+import json
+from collections.abc import Mapping
 from dataclasses import asdict, dataclass
 from enum import Enum
 from hashlib import sha256
-import json
-from typing import Mapping, Tuple
 
 
 class OutcomeStatus(str, Enum):
@@ -57,7 +57,7 @@ class VerificationResult:
     observed_value: float | None
     deviation: float | None
     retry_recommended: bool
-    reasons: Tuple[str, ...]
+    reasons: tuple[str, ...]
 
     def __post_init__(self) -> None:
         if not self.result_id.strip() or not self.command_id.strip():
@@ -93,7 +93,7 @@ class OutcomeCertificate:
         )
 
     @classmethod
-    def issue(cls, *, result: VerificationResult, expectation_digest: str, evidence_digest: str, policy_version: str, previous_digest: str | None = None) -> "OutcomeCertificate":
+    def issue(cls, *, result: VerificationResult, expectation_digest: str, evidence_digest: str, policy_version: str, previous_digest: str | None = None) -> OutcomeCertificate:
         payload = cls.canonical_payload(result, expectation_digest, evidence_digest, policy_version, previous_digest)
         return cls(result, expectation_digest, evidence_digest, policy_version, previous_digest, sha256(payload.encode()).hexdigest())
 

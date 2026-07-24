@@ -1,9 +1,9 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from heos.result_verification import (
     DecisionMemory,
-    DecisionMemoryRecord,
     DecisionMemoryQuery,
+    DecisionMemoryRecord,
     DecisionQuery,
 )
 
@@ -17,7 +17,7 @@ def make_record(success=True):
         expected_value=3000,
         actual_value=2950,
         success=success,
-        created_at=datetime.now(timezone.utc),
+        created_at=datetime.now(UTC),
     )
 
 

@@ -1,6 +1,5 @@
 from heos import house_state
 
-
 EXPECTED_EXPORTS = {
     "ControlMode",
     "HouseState",

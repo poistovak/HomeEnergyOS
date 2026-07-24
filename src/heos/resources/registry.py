@@ -1,6 +1,8 @@
 from __future__ import annotations
+
 from .models import ResourceKind
 from .resource import EnergyResource
+
 
 class ResourceRegistry:
     def __init__(self) -> None:

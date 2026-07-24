@@ -12,13 +12,13 @@ from heos.outcome_verifier import (
 
 
 def expected(**changes):
-    values = dict(command_id="cmd-001", incident_id="incident-001", metric="grid_power", target_min=-50.0, target_max=50.0, deadline=500, source_digest="digest26")
+    values = {"command_id": "cmd-001", "incident_id": "incident-001", "metric": "grid_power", "target_min": -50.0, "target_max": 50.0, "deadline": 500, "source_digest": "digest26"}
     values.update(changes)
     return ExpectedOutcome(**values)
 
 
 def evidence(**changes):
-    values = dict(command_id="cmd-001", observed_at=200, values={"grid_power": 10.0}, attempts_used=1, executor="home_assistant")
+    values = {"command_id": "cmd-001", "observed_at": 200, "values": {"grid_power": 10.0}, "attempts_used": 1, "executor": "home_assistant"}
     values.update(changes)
     return ExecutionEvidence(**values)
 

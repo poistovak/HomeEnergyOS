@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+import json
+from collections.abc import Mapping
 from dataclasses import asdict, dataclass
 from enum import Enum
 from hashlib import sha256
-import json
-from typing import Any, Mapping, Tuple
+from typing import Any
 
 
 class IncidentClass(str, Enum):
@@ -53,7 +54,7 @@ class Incident:
     incident_id: str
     incident_class: IncidentClass
     severity: int
-    signals: Tuple[FaultSignal, ...]
+    signals: tuple[FaultSignal, ...]
     opened_at: int
 
     def __post_init__(self) -> None:
@@ -71,7 +72,7 @@ class RecoveryDecision:
     mode: RecoveryMode
     status: RecoveryStatus
     fallback_strategy: str | None
-    reasons: Tuple[str, ...]
+    reasons: tuple[str, ...]
     valid_until: int
 
     def __post_init__(self) -> None:
@@ -119,7 +120,7 @@ class RecoveryCertificate:
         incident_digest: str,
         policy_version: str,
         previous_digest: str | None = None,
-    ) -> "RecoveryCertificate":
+    ) -> RecoveryCertificate:
         payload = cls.canonical_payload(
             decision, incident_digest, policy_version, previous_digest
         )

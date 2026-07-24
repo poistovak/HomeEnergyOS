@@ -3,8 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from .decision_memory import (
-    DecisionMemoryRecord,
     DecisionMemory,
+    DecisionMemoryRecord,
 )
 
 
@@ -34,17 +34,14 @@ class DecisionMemoryQuery:
 
         for record in records:
 
-            if query.decision:
-                if record.decision != query.decision:
-                    continue
+            if query.decision and record.decision != query.decision:
+                continue
 
-            if query.outcome:
-                if record.outcome != query.outcome:
-                    continue
+            if query.outcome and record.outcome != query.outcome:
+                continue
 
-            if query.success_only:
-                if not record.success:
-                    continue
+            if query.success_only and not record.success:
+                continue
 
             result.append(record)
 

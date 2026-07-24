@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from heos.result_verification import (
     DecisionMemoryRanker,
@@ -15,7 +15,7 @@ def make_record(success):
         expected_value=5000,
         actual_value=4900,
         success=success,
-        created_at=datetime.now(timezone.utc),
+        created_at=datetime.now(UTC),
     )
 
 

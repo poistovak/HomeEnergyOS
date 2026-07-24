@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Mapping
 
 from .models import Incident, IncidentClass, RecoveryDecision, RecoveryMode, RecoveryStatus
 

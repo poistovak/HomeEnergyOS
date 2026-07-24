@@ -1,4 +1,4 @@
-from .builder import ProofBuildError, ProofBuilder
+from .builder import ProofBuilder, ProofBuildError
 from .canonical import canonical_json, normalize_versions, sha256_hex, to_primitive
 from .engine import ProofCarryingDecisionEngine
 from .integrity import certificate_fingerprint, certificate_id_for

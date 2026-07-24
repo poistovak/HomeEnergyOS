@@ -8,7 +8,6 @@ from heos.forecast import (
     StaticForecastProvider,
 )
 
-
 start = datetime(2026, 7, 14, 10, 0, tzinfo=UTC)
 end = start + timedelta(hours=1)
 

@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Iterable
 from dataclasses import replace
-from typing import Iterable, Protocol
+from typing import Protocol
 from uuid import NAMESPACE_URL, uuid5
 
 from heos.digital_twin import DigitalTwin, TwinParameters

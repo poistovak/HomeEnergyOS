@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import itertools
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import StrEnum
@@ -129,7 +130,8 @@ class TwinState:
     battery_throughput_kwh: float = 0.0
 
     def __post_init__(self) -> None:
-        object.__setattr__(self, "observed_at", _aware(self.observed_at, "observed_at"))
+        if self.observed_at.tzinfo is None or self.observed_at.utcoffset() is None:
+         raise ValueError("observed_at must be timezone-aware")
         object.__setattr__(self, "indoor_temp_c", _finite(self.indoor_temp_c, "indoor_temp_c"))
         object.__setattr__(self, "battery_soc", _fraction(self.battery_soc, "battery_soc"))
         object.__setattr__(self, "ev_soc", _fraction(self.ev_soc, "ev_soc"))
@@ -148,17 +150,20 @@ class TwinControl:
     ev_charge_kw: float = 0.0
     pv_curtailment_kw: float = 0.0
 
+
     def __post_init__(self) -> None:
-        object.__setattr__(self, "hvac_thermal_kw", _finite(self.hvac_thermal_kw, "hvac_thermal_kw"))
-        object.__setattr__(self, "battery_power_kw", _finite(self.battery_power_kw, "battery_power_kw"))
-        object.__setattr__(self, "ev_charge_kw", _non_negative(self.ev_charge_kw, "ev_charge_kw"))
-        object.__setattr__(
-            self,
-            "pv_curtailment_kw",
-            _non_negative(self.pv_curtailment_kw, "pv_curtailment_kw"),
-        )
+        if self.ev_charge_kw < 0:
+            raise ValueError("ev_charge_kw must be non-negative")
 
+        if self.hvac_thermal_kw < 0:
+            raise ValueError("hvac_thermal_kw must be non-negative")
 
+        if self.battery_power_kw < 0:
+            raise ValueError("battery_power_kw must be non-negative")
+
+        if self.pv_curtailment_kw < 0:
+            raise ValueError("pv_curtailment_kw must be non-negative")
+   
 @dataclass(frozen=True, slots=True)
 class TwinDisturbance:
     outdoor_temp_c: float
@@ -291,7 +296,7 @@ class TwinTrace:
             raise ValueError("first step must start from initial_state")
         if steps[-1].next_state != self.final_state:
             raise ValueError("final_state must equal the last step next_state")
-        for previous, current in zip(steps, steps[1:], strict=False):
+        for previous, current in itertools.pairwise(steps):
             if previous.next_state != current.prior_state:
                 raise ValueError("steps must form a continuous state chain")
         object.__setattr__(self, "explanation", _text(self.explanation, "explanation"))

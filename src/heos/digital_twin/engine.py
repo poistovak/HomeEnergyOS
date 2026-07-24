@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Iterable
 from dataclasses import replace
 from datetime import datetime, timedelta
-from typing import Iterable
 from uuid import NAMESPACE_URL, uuid5
 
 from .correction import (
@@ -173,6 +173,7 @@ class DigitalTwin:
         metadata: Iterable[tuple[str, str]] = (),
         require_feasible: bool = False,
     ) -> TwinTrace:
+        print("DEBUG generated_at =", generated_at, "tzinfo =", generated_at.tzinfo)
         if generated_at.tzinfo is None or generated_at.utcoffset() is None:
             raise ValueError("generated_at must be timezone-aware")
         control_steps = tuple(controls)

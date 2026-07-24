@@ -6,15 +6,15 @@ from typing import Any
 
 
 def selected_evaluation(decision: Any) -> Any:
-    return getattr(decision, "selected")
+    return decision.selected
 
 
 def selected_candidate(decision: Any) -> Any:
-    return getattr(selected_evaluation(decision), "candidate")
+    return selected_evaluation(decision).candidate
 
 
 def selected_metrics(decision: Any) -> Any:
-    return getattr(selected_evaluation(decision), "metrics")
+    return selected_evaluation(decision).metrics
 
 
 def decision_shape_errors(decision: Any, minimum_alternatives: int) -> tuple[str, ...]:
@@ -33,13 +33,13 @@ def decision_shape_errors(decision: Any, minimum_alternatives: int) -> tuple[str
     if errors:
         return tuple(errors)
 
-    alternatives = tuple(getattr(decision, "alternatives"))
+    alternatives = tuple(decision.alternatives)
     if len(alternatives) < minimum_alternatives:
         errors.append(
             f"requires at least {minimum_alternatives} alternatives; got {len(alternatives)}"
         )
 
-    selected = getattr(decision, "selected")
+    selected = decision.selected
     if not hasattr(selected, "candidate"):
         errors.append("selected evaluation is missing candidate")
     if not hasattr(selected, "metrics"):
@@ -48,15 +48,15 @@ def decision_shape_errors(decision: Any, minimum_alternatives: int) -> tuple[str
         errors.append("selected evaluation is missing feasible")
 
     if hasattr(selected, "candidate"):
-        candidate = getattr(selected, "candidate")
+        candidate = selected.candidate
         for name in ("candidate_id", "controls", "objective"):
             if not hasattr(candidate, name):
                 errors.append(f"selected candidate is missing {name}")
-        if hasattr(candidate, "controls") and not tuple(getattr(candidate, "controls")):
+        if hasattr(candidate, "controls") and not tuple(candidate.controls):
             errors.append("selected candidate controls must not be empty")
 
     if hasattr(selected, "metrics"):
-        metrics = getattr(selected, "metrics")
+        metrics = selected.metrics
         for name in ("objective_score", "violation_count", "violation_magnitude"):
             if not hasattr(metrics, name):
                 errors.append(f"selected metrics are missing {name}")
@@ -65,7 +65,7 @@ def decision_shape_errors(decision: Any, minimum_alternatives: int) -> tuple[str
 
 
 def objective_value(decision: Any) -> str:
-    objective = getattr(selected_candidate(decision), "objective")
+    objective = selected_candidate(decision).objective
     return str(getattr(objective, "value", objective))
 
 

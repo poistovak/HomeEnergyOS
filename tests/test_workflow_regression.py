@@ -3,7 +3,6 @@ import pytest
 from heos.coordination import CoordinationState
 from heos.coordination.workflow import Workflow
 
-
 TRANSITIONS = [
     (CoordinationState.CREATED, CoordinationState.PLANNING),
     (CoordinationState.PLANNING, CoordinationState.ARBITRATING),

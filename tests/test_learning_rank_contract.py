@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from heos.result_verification import (
     LearningRank,
@@ -13,7 +13,7 @@ def make_record(value, success=True):
         expected_value=value,
         actual_value=value - 50,
         success=success,
-        timestamp=datetime.now(timezone.utc),
+        timestamp=datetime.now(UTC),
     )
 
 

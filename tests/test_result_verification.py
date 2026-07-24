@@ -12,29 +12,29 @@ from heos.result_verification import (
 
 
 def expectation(**changes):
-    values = dict(
-        command_id="cmd-028",
-        target="wattpilot.charging_power",
-        expected_value=2300.0,
-        absolute_tolerance=250.0,
-        relative_tolerance=0.0,
-        deadline=20,
-        stability_samples=2,
-        minimum_samples=2,
-        rollback_supported=True,
-    )
+    values = {
+        "command_id": "cmd-028",
+        "target": "wattpilot.charging_power",
+        "expected_value": 2300.0,
+        "absolute_tolerance": 250.0,
+        "relative_tolerance": 0.0,
+        "deadline": 20,
+        "stability_samples": 2,
+        "minimum_samples": 2,
+        "rollback_supported": True,
+    }
     values.update(changes)
     return ResultExpectation(**values)
 
 
 def observation(value=2300.0, observed_at=10, **changes):
-    values = dict(
-        target="wattpilot.charging_power",
-        value=value,
-        observed_at=observed_at,
-        source="home_assistant",
-        quality=1.0,
-    )
+    values = {
+        "target": "wattpilot.charging_power",
+        "value": value,
+        "observed_at": observed_at,
+        "source": "home_assistant",
+        "quality": 1.0,
+    }
     values.update(changes)
     return Observation(**values)
 

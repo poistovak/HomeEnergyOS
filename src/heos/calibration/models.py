@@ -1,10 +1,10 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from enum import StrEnum
 from math import isfinite
-from typing import Iterable
 
 from heos.digital_twin import TwinControl, TwinDisturbance, TwinParameters, TwinState
 

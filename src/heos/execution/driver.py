@@ -1,7 +1,10 @@
 from __future__ import annotations
+
 from dataclasses import dataclass
 from typing import Protocol
+
 from heos.compiler.execution_step import ExecutionStep
+
 
 @dataclass(frozen=True, slots=True)
 class ExecutionResult:

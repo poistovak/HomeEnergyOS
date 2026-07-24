@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+import json
+from collections.abc import Mapping
 from dataclasses import asdict, dataclass
 from enum import Enum
 from hashlib import sha256
-import json
-from typing import Any, Mapping, Tuple
+from typing import Any
 
 
 class ExecutionStatus(str, Enum):
@@ -61,7 +62,7 @@ class ExecutionCommand:
     attempt_limit: int
     cooldown_seconds: int
     valid_until: int
-    reasons: Tuple[str, ...]
+    reasons: tuple[str, ...]
 
     def __post_init__(self) -> None:
         if not self.command_id.strip() or not self.action.strip():
@@ -97,7 +98,7 @@ class ExecutionCertificate:
         )
 
     @classmethod
-    def issue(cls, *, command: ExecutionCommand, directive_digest: str, policy_version: str, previous_digest: str | None = None) -> "ExecutionCertificate":
+    def issue(cls, *, command: ExecutionCommand, directive_digest: str, policy_version: str, previous_digest: str | None = None) -> ExecutionCertificate:
         payload = cls.canonical_payload(command, directive_digest, policy_version, previous_digest)
         return cls(command, directive_digest, policy_version, previous_digest, sha256(payload.encode()).hexdigest())
 

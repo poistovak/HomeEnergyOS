@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass(frozen=True, slots=True)
 class CoreConfig:
     tick_interval_seconds: int = 30

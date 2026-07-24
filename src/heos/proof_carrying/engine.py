@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from datetime import datetime
-from typing import Any, Iterable
+from typing import Any
 
 from .builder import ProofBuilder
 from .models import CertifiedDecision, DecisionCertificate, ProofPolicy, VerificationReport

@@ -1,5 +1,6 @@
-import pytest
 from datetime import UTC, datetime, timedelta
+
+import pytest
 
 from heos.calibration import (
     CalibratableParameter,
@@ -9,7 +10,6 @@ from heos.calibration import (
     CalibrationSample,
     ParameterBounds,
 )
-
 from heos.digital_twin import (
     TwinControl,
     TwinDisturbance,

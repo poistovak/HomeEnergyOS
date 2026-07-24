@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from heos.result_verification import (
     DecisionMemory,
@@ -17,7 +17,7 @@ def test_memory_stores_decision():
         expected_value=3000.0,
         actual_value=2980.0,
         success=True,
-        created_at=datetime.now(timezone.utc),
+        created_at=datetime.now(UTC),
     )
 
     memory.add(record)

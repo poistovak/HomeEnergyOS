@@ -12,24 +12,24 @@ from heos.execution_supervisor import (
 
 
 def directive(**changes):
-    values = dict(
-        plan_id="plan-001",
-        incident_id="incident-001",
-        status="automatic",
-        action="apply_fallback",
-        max_attempts=3,
-        cooldown_seconds=10,
-        deadline=500,
-        approval_token_required=False,
-        source_digest="abc123",
-        metadata={"source": "m25"},
-    )
+    values = {
+        "plan_id": "plan-001",
+        "incident_id": "incident-001",
+        "status": "automatic",
+        "action": "apply_fallback",
+        "max_attempts": 3,
+        "cooldown_seconds": 10,
+        "deadline": 500,
+        "approval_token_required": False,
+        "source_digest": "abc123",
+        "metadata": {"source": "m25"},
+    }
     values.update(changes)
     return ContinuityDirective(**values)
 
 
 def approval(**changes):
-    values = dict(token_id="approval-1", plan_id="plan-001", approved_action="apply_fallback", valid_until=400, issuer="operator")
+    values = {"token_id": "approval-1", "plan_id": "plan-001", "approved_action": "apply_fallback", "valid_until": 400, "issuer": "operator"}
     values.update(changes)
     return ApprovalToken(**values)
 

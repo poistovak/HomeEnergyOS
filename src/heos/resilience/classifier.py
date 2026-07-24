@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-from hashlib import sha256
 import json
-from typing import Iterable
+from collections.abc import Iterable
+from hashlib import sha256
 
 from .models import FaultSignal, Incident, IncidentClass
-
 
 _CODE_MAP = {
     "stale": IncidentClass.DATA_STALE,

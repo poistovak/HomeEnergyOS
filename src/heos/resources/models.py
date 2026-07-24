@@ -1,8 +1,10 @@
 from __future__ import annotations
+
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from enum import StrEnum
-from typing import Mapping
+
 
 class ResourceKind(StrEnum):
     PRODUCER = "producer"

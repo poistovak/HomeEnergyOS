@@ -1,13 +1,12 @@
-import pytest
-
 from datetime import UTC, datetime, timedelta
+
+import pytest
 
 from heos.digital_twin import (
     TwinControl,
     TwinDisturbance,
     TwinState,
 )
-
 from heos.strategy.models import (
     ComfortBand,
     StrategyCandidate,
@@ -17,7 +16,6 @@ from heos.strategy.models import (
     StrategyRequest,
     TariffStep,
 )
-
 
 # ==============================
 # TariffStep

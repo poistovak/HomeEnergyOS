@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from enum import StrEnum
 
+
 class StepType(StrEnum):
     VERIFY="verify"
     WAIT="wait"

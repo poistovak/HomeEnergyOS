@@ -10,11 +10,13 @@ from heos.execution.drivers import DryRunExecutionDriver
 from heos.feedback import (
     ActionRecord,
     DecisionRecord,
-    ExecutionStatus as FeedbackExecutionStatus,
     FeedbackEngine,
     InMemoryFeedbackRepository,
     OutcomeRecord,
     VersionStamp,
+)
+from heos.feedback import (
+    ExecutionStatus as FeedbackExecutionStatus,
 )
 from heos.kernel import EnergyBalance, KernelHealth, KernelSnapshot
 from heos.memory import HouseMemoryEngine, InMemoryHouseMemoryRepository
@@ -24,9 +26,9 @@ from heos.proof_carrying import (
     replay_envelope,
 )
 from heos.release_gate import (
-    OperationMode,
     OperationalReleaseGate,
     OperationalRequest,
+    OperationMode,
     standard_manifest,
 )
 from heos.safety import SafetyContext, SafetyEngine

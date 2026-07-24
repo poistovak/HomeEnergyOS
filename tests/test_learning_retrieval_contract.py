@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from heos.result_verification import (
     LearningMemory,
@@ -15,7 +15,7 @@ def make_record(value):
         expected_value=value,
         actual_value=value - 50,
         success=True,
-        timestamp=datetime.now(timezone.utc),
+        timestamp=datetime.now(UTC),
     )
 
 

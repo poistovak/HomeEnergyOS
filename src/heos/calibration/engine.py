@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Iterable
 from dataclasses import replace
 from datetime import datetime
-from typing import Iterable
 from uuid import NAMESPACE_URL, uuid5
 
 from heos.digital_twin import TwinParameters

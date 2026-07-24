@@ -18,5 +18,5 @@ class Engine:
         print("6. Validate Safety")
         print("7. Build Action Queue")
 
-        print("")
+        print()
         print("HEOS heartbeat complete.")

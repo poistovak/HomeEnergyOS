@@ -2,7 +2,6 @@ import pytest
 
 from heos.coordination.state import CoordinationState
 
-
 EXPECTED_STATES = (
     "CREATED",
     "PLANNING",

@@ -13,10 +13,10 @@ from heos.release_gate import (
     GateCode,
     GateResult,
     InMemoryReleaseRepository,
-    OperationMode,
     OperationalReleaseEngine,
     OperationalReleaseGate,
     OperationalRequest,
+    OperationMode,
     ReadinessEvidence,
     ReleaseDecision,
     ReleasePolicy,
@@ -29,7 +29,6 @@ from heos.release_gate import (
     mode_rank,
     standard_manifest,
 )
-
 
 NOW = datetime(2026, 7, 15, 18, 0, tzinfo=UTC)
 
@@ -464,7 +463,7 @@ def test_decision_shape_requires_minimum_alternatives() -> None:
             ),
             NOW,
         ),
-        lambda: SystemManifest((), datetime(2026, 1, 1)),
+        lambda: SystemManifest((), datetime(2026, 1, 1)),  # noqa: DTZ001
         lambda: ReleasePolicy(maximum_decision_age=timedelta()),
         lambda: ReleasePolicy(maximum_future_skew=timedelta(seconds=-1)),
         lambda: ReleasePolicy(minimum_alternatives=0),
@@ -472,7 +471,7 @@ def test_decision_shape_requires_minimum_alternatives() -> None:
         lambda: OperationalRequest(
             FakeDecision(),
             OperationMode.ADVISE,
-            datetime(2026, 1, 1),
+            datetime(2026, 1, 1),  # noqa: DTZ001
             manifest(),
         ),
     ],

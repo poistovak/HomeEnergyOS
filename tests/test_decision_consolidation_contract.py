@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from heos.result_verification import (
     DecisionFeedback,
@@ -16,21 +16,21 @@ def test_consolidates_feedback():
             recommendation="charge",
             outcome="SUCCESS",
             success=True,
-            created_at=datetime.now(timezone.utc),
+            created_at=datetime.now(UTC),
         ),
         DecisionFeedback(
             command_id="2",
             recommendation="charge",
             outcome="SUCCESS",
             success=True,
-            created_at=datetime.now(timezone.utc),
+            created_at=datetime.now(UTC),
         ),
         DecisionFeedback(
             command_id="3",
             recommendation="charge",
             outcome="FAILED",
             success=False,
-            created_at=datetime.now(timezone.utc),
+            created_at=datetime.now(UTC),
         ),
     ]
 

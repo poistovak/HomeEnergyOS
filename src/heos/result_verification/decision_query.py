@@ -34,17 +34,14 @@ class DecisionMemoryQuery:
 
         for record in records:
 
-            if query.decision is not None:
-                if record.decision != query.decision:
-                    continue
+            if query.decision is not None and record.decision != query.decision:
+                continue
 
-            if query.outcome is not None:
-                if record.outcome != query.outcome:
-                    continue
+            if query.outcome is not None and record.outcome != query.outcome:
+                continue
 
-            if query.success_only:
-                if not record.success:
-                    continue
+            if query.success_only and not record.success:
+                continue
 
             result.append(record)
 

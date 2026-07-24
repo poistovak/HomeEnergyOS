@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+import json
+from collections.abc import Mapping
 from dataclasses import asdict, dataclass
 from enum import Enum
 from hashlib import sha256
-import json
-from typing import Any, Mapping, Tuple
+from typing import Any
 
 
 class RecoveryMode(str, Enum):
@@ -51,7 +52,7 @@ class ContinuityPlan:
     cooldown_seconds: int
     deadline: int
     approval_token_required: bool
-    reasons: Tuple[str, ...]
+    reasons: tuple[str, ...]
 
     def __post_init__(self) -> None:
         if not self.plan_id.strip():
@@ -111,7 +112,7 @@ class ContinuityCertificate:
         recovery_digest: str,
         policy_version: str,
         previous_digest: str | None = None,
-    ) -> "ContinuityCertificate":
+    ) -> ContinuityCertificate:
         payload = cls.canonical_payload(
             plan,
             recovery_digest,

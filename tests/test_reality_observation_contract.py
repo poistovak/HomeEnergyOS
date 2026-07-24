@@ -47,6 +47,6 @@ def test_observation_requires_timezone():
         Observation(
             target="pv_power_w",
             value=100.0,
-            observed_at=datetime.now(),
+            observed_at=datetime.now(UTC),
             source="sensor",
         )

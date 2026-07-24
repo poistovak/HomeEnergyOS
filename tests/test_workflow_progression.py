@@ -3,7 +3,6 @@ import pytest
 from heos.coordination import CoordinationState
 from heos.coordination.workflow import Workflow
 
-
 ACTIVE = (
     CoordinationState.CREATED,
     CoordinationState.PLANNING,

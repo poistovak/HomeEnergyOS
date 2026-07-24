@@ -2,14 +2,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from .decision_rank import (
-    DecisionMemoryRanker,
-    DecisionRank,
-)
-
 from .decision_query import (
     DecisionMemoryQuery,
     DecisionQuery,
+)
+from .decision_rank import (
+    DecisionMemoryRanker,
+    DecisionRank,
 )
 
 

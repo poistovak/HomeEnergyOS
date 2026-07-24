@@ -3,6 +3,7 @@ from heos.compiler.execution_plan import ExecutionPlan
 from heos.execution import ExecutionResult, ExecutionRuntime, ExecutionStatus
 from heos.execution.drivers import DryRunExecutionDriver
 
+
 class FailingDriver:
     def __init__(self, fail_at: int) -> None:
         self._index = 0

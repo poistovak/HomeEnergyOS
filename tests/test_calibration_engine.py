@@ -6,6 +6,7 @@ from datetime import UTC, datetime, timedelta
 import pytest
 
 from heos.calibration import (
+    CalibratableParameter,
     CalibrationConfigurationError,
     CalibrationConflictError,
     CalibrationMetricScales,
@@ -14,7 +15,6 @@ from heos.calibration import (
     CalibrationPolicy,
     CalibrationReport,
     CalibrationSample,
-    CalibratableParameter,
     DigitalTwinCalibrator,
     InMemoryCalibrationRepository,
     JsonlCalibrationRepository,
@@ -248,7 +248,7 @@ def test_calibrator_rejects_naive_generated_time() -> None:
             parameters(),
             [sample_from(parameters())],
             [ParameterBounds(CalibratableParameter.HVAC_COP, 2.0, 6.0)],
-            generated_at=datetime(2026, 7, 15),
+            generated_at=datetime(2026, 7, 15, 9),
         )
 
 

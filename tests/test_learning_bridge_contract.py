@@ -1,5 +1,6 @@
+from datetime import UTC, datetime
+
 import pytest
-from datetime import datetime, timezone
 
 from heos.result_verification import LearningRecord
 
@@ -11,7 +12,7 @@ def make_record():
         expected_value=5000.0,
         actual_value=4800.0,
         success=True,
-        timestamp=datetime.now(timezone.utc),
+        timestamp=datetime.now(UTC),
     )
 
 
@@ -30,7 +31,7 @@ def test_learning_record_requires_prediction_id():
             expected_value=1.0,
             actual_value=1.0,
             success=True,
-            timestamp=datetime.now(timezone.utc),
+            timestamp=datetime.now(UTC),
         )
 
 
@@ -42,7 +43,7 @@ def test_learning_record_requires_command_id():
             expected_value=1.0,
             actual_value=1.0,
             success=True,
-            timestamp=datetime.now(timezone.utc),
+            timestamp=datetime.now(UTC),
         )
 
 
@@ -54,5 +55,5 @@ def test_learning_record_requires_timezone():
             expected_value=1.0,
             actual_value=1.0,
             success=True,
-            timestamp=datetime.now(),
+            timestamp=datetime.now(UTC),
         )

@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+from collections.abc import Iterable, Mapping
 from dataclasses import replace
 from datetime import datetime
 from statistics import fmean
-from typing import Iterable, Mapping
 from uuid import NAMESPACE_URL, uuid5
 
 from heos.feedback.models import ExperienceCandidate, OutcomeClassification
@@ -174,10 +174,7 @@ class HouseMemoryEngine:
             key: fmean(values)
             for key, values in sorted(target_values.items())
         }
-        dominant_value = sorted(
-            classifications.items(),
-            key=lambda item: (-item[1], item[0]),
-        )[0][0]
+        dominant_value = min(classifications.items(), key=lambda item: (-item[1], item[0]))[0]
         member_ids = tuple(sorted(record.record_id for record in members))
         identifier = uuid5(
             NAMESPACE_URL,

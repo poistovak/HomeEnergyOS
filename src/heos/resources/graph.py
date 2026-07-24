@@ -1,8 +1,11 @@
 from __future__ import annotations
+
 from collections import defaultdict, deque
+
 from .flow import EnergyCarrier, EnergyFlow
 from .registry import ResourceRegistry
 from .resource import EnergyResource
+
 
 class ResourceGraph:
     def __init__(self) -> None:

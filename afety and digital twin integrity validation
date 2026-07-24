@@ -1,0 +1,253 @@
+warning: in the working copy of 'examples/calibration_example.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'examples/forecast_core_example.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'examples/operational_release_gate_example.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'examples/safety_engine_example.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/applications/real_home/config.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/calibration/__init__.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/calibration/engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/calibration/metrics.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/calibration/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/calibration/serialization.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/compiler/compiler.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/compiler/execution_plan.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/compiler/execution_step.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/continuity/engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/continuity/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/continuity/policy.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/core/__init__.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/core/config.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/core/events.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/core/kernel.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/core/registry.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/core/scheduler.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/demo/cli.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/demo/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/demo/pipeline.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/digital_twin/engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/digital_twin/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/digital_twin/serialization.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/domain/house_state.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/domain/twin.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/execution/driver.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/execution/drivers/__init__.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/execution/drivers/dry_run.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/execution/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/execution/runtime.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/execution_supervisor/engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/execution_supervisor/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/execution_supervisor/policy.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/feedback/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/feedback/repository.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/feedback/runtime_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/infrastructure/home_assistant/executor.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/infrastructure/home_assistant/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/intelligence/layer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/intelligence/trend.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/memory/engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/memory/fingerprint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/memory/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/memory/serialization.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/outcome_verifier/engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/outcome_verifier/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/outcome_verifier/policy.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/planning/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/proof_carrying/__init__.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/proof_carrying/builder.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/proof_carrying/engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/proof_carrying/ledger.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/proof_carrying/snapshot.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/proof_carrying/verifier.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/release_gate/__init__.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/release_gate/inspection.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/release_gate/supervisor.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/resilience/classifier.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/resilience/engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/resilience/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/resilience/policy.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/resources/flow.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/resources/graph.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/resources/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/resources/registry.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/resources/resource.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/result_verification.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/result_verification/__init__.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/result_verification/decision_querty.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/result_verification/engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/result_verification/learning_query.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/result_verification/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/result_verification/verifier.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/robustness/cli.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/robustness/engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/robustness/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/robustness/serialization.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/strategy/engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/strategy/factory.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/heos/strategy/serialization.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/conftest.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_calibration_contract.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_calibration_engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_core.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_decision_compiler.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_decision_consolidation_contract.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_decision_feedback_contract.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_decision_memory_contract.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_decision_query_contract.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_decision_rank_contract.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_decision_recommadation_contract.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_digital_twin.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_energy_resource_model.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_execution_runtime.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_execution_supervisor.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_feedback_engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_feedback_runtime_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_forecast_core.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_house_memory.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_house_state.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_operational_release_gate.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_outcome_verifier.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_proof_carrying_decisions.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_result_verification.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_strategy_engine.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/tests_reality_observation_contract.py', LF will be replaced by CRLF the next time Git touches it
+ examples/calibration_example.py                    |   2 [32m+[m[31m-[m
+ examples/forecast_core_example.py                  |   1 [31m-[m
+ examples/operational_release_gate_example.py       |   2 [32m+[m[31m-[m
+ examples/safety_engine_example.py                  |   1 [31m-[m
+ src/heos/applications/real_home/config.py          |   4 [32m+[m[31m-[m
+ src/heos/calibration/__init__.py                   |   8 [32m+[m[31m-[m
+ src/heos/calibration/engine.py                     |   2 [32m+[m[31m-[m
+ src/heos/calibration/metrics.py                    |   4 [32m+[m[31m-[m
+ src/heos/calibration/models.py                     |   2 [32m+[m[31m-[m
+ src/heos/calibration/serialization.py              |   5 [32m+[m[31m-[m
+ src/heos/capabilities/__init__.py                  |   2 [32m+[m[31m-[m
+ src/heos/compiler/compiler.py                      |   1 [32m+[m
+ src/heos/compiler/execution_plan.py                |   2 [32m+[m
+ src/heos/compiler/execution_step.py                |   1 [32m+[m
+ src/heos/continuity/engine.py                      |   2 [32m+[m[31m-[m
+ src/heos/continuity/models.py                      |   9 [32m+[m[31m-[m
+ src/heos/continuity/policy.py                      |   2 [32m+[m[31m-[m
+ src/heos/core/__init__.py                          |  13 [32m+[m[31m-[m
+ src/heos/core/config.py                            |   1 [32m+[m
+ src/heos/core/engine.py                            |   2 [32m+[m[31m-[m
+ src/heos/core/events.py                            |   3 [32m+[m[31m-[m
+ src/heos/core/kernel.py                            |   4 [32m+[m[31m-[m
+ src/heos/core/registry.py                          |   4 [32m+[m[31m-[m
+ src/heos/core/scheduler.py                         |   2 [32m+[m[31m-[m
+ src/heos/decision/condition.py                     |   1 [32m+[m
+ src/heos/decision/rule.py                          |   1 [32m+[m
+ src/heos/decision/rule_result.py                   |   1 [32m+[m
+ src/heos/demo/cli.py                               |   2 [32m+[m[31m-[m
+ src/heos/demo/models.py                            |   3 [32m+[m[31m-[m
+ src/heos/demo/pipeline.py                          |   6 [32m+[m[31m-[m
+ src/heos/devtools/organ_builder.py                 |   2 [32m+[m[31m-[m
+ src/heos/digital_twin/engine.py                    |   3 [32m+[m[31m-[m
+ src/heos/digital_twin/models.py                    |  25 [32m+[m[31m-[m
+ src/heos/digital_twin/serialization.py             |   3 [32m+[m[31m-[m
+ src/heos/domain/house_state.py                     |   5 [32m+[m[31m-[m
+ src/heos/domain/twin.py                            |   2 [32m+[m[31m-[m
+ src/heos/execution/driver.py                       |   3 [32m+[m
+ src/heos/execution/drivers/__init__.py             |   1 [32m+[m
+ src/heos/execution/drivers/dry_run.py              |   2 [32m+[m
+ src/heos/execution/models.py                       |   2 [32m+[m
+ src/heos/execution/runtime.py                      |   3 [32m+[m
+ src/heos/execution_supervisor/engine.py            |   2 [32m+[m[31m-[m
+ src/heos/execution_supervisor/models.py            |   9 [32m+[m[31m-[m
+ src/heos/execution_supervisor/policy.py            |   2 [32m+[m[31m-[m
+ src/heos/feedback/models.py                        |   2 [32m+[m[31m-[m
+ src/heos/feedback/repository.py                    | 143 [32m+++++++[m[31m--[m
+ src/heos/feedback/runtime_bridge.py                |   2 [32m+[m[31m-[m
+ src/heos/infrastructure/home_assistant/executor.py |   2 [32m+[m[31m-[m
+ src/heos/infrastructure/home_assistant/models.py   |   2 [32m+[m[31m-[m
+ src/heos/intelligence/layer.py                     |   2 [32m+[m[31m-[m
+ src/heos/intelligence/trend.py                     |   2 [32m+[m[31m-[m
+ src/heos/memory/engine.py                          |   7 [32m+[m[31m-[m
+ src/heos/memory/fingerprint.py                     |   2 [32m+[m[31m-[m
+ src/heos/memory/models.py                          |   6 [32m+[m[31m-[m
+ src/heos/memory/serialization.py                   |   3 [32m+[m[31m-[m
+ src/heos/outcome_verifier/engine.py                |   2 [32m+[m[31m-[m
+ src/heos/outcome_verifier/models.py                |   8 [32m+[m[31m-[m
+ src/heos/outcome_verifier/policy.py                |   2 [32m+[m[31m-[m
+ src/heos/planning/models.py                        |   2 [32m+[m[31m-[m
+ src/heos/policy/constraint.py                      |   1 [32m+[m
+ src/heos/policy/policy.py                          |   1 [32m+[m
+ src/heos/policy/violation.py                       |   1 [32m+[m
+ src/heos/proof_carrying/__init__.py                |   2 [32m+[m[31m-[m
+ src/heos/proof_carrying/builder.py                 |   3 [32m+[m[31m-[m
+ src/heos/proof_carrying/engine.py                  |   3 [32m+[m[31m-[m
+ src/heos/proof_carrying/ledger.py                  |   2 [32m+[m[31m-[m
+ src/heos/proof_carrying/snapshot.py                |  42 [32m+[m[31m--[m
+ src/heos/proof_carrying/verifier.py                |   1 [32m+[m
+ src/heos/reflex/rule.py                            |   2 [32m+[m[31m-[m
+ src/heos/release_gate/__init__.py                  |   2 [32m+[m[31m-[m
+ src/heos/release_gate/inspection.py                |  18 [32m+[m[31m-[m
+ src/heos/release_gate/supervisor.py                |  21 [32m+[m[31m-[m
+ src/heos/resilience/classifier.py                  |   5 [32m+[m[31m-[m
+ src/heos/resilience/engine.py                      |   2 [32m+[m[31m-[m
+ src/heos/resilience/models.py                      |  11 [32m+[m[31m-[m
+ src/heos/resilience/policy.py                      |   2 [32m+[m[31m-[m
+ src/heos/resources/flow.py                         |   2 [32m+[m
+ src/heos/resources/graph.py                        |   3 [32m+[m
+ src/heos/resources/models.py                       |   4 [32m+[m[31m-[m
+ src/heos/resources/registry.py                     |   2 [32m+[m
+ src/heos/resources/resource.py                     |   5 [32m+[m[31m-[m
+ src/heos/result_verification.py                    |   2 [32m+[m[31m-[m
+ src/heos/result_verification/__init__.py           | 345 [32m+++++++++[m[31m------------[m
+ src/heos/result_verification/decision_querty.py    |  17 [32m+[m[31m-[m
+ src/heos/result_verification/decision_query.py     |  15 [32m+[m[31m-[m
+ .../result_verification/decision_recommedation.py  |   9 [32m+[m[31m-[m
+ .../result_verification/decision_recommendation.py |   7 [32m+[m[31m-[m
+ src/heos/result_verification/engine.py             |   2 [32m+[m[31m-[m
+ src/heos/result_verification/learning_query.py     |  16 [32m+[m[31m-[m
+ src/heos/result_verification/models.py             |  15 [32m+[m[31m-[m
+ src/heos/result_verification/similarity.py         |   5 [32m+[m[31m-[m
+ src/heos/result_verification/verifier.py           |   2 [32m+[m[31m-[m
+ src/heos/robustness/cli.py                         |   2 [32m+[m[31m-[m
+ src/heos/robustness/engine.py                      |   2 [32m+[m[31m-[m
+ src/heos/robustness/models.py                      |   3 [32m+[m[31m-[m
+ src/heos/robustness/serialization.py               |   3 [32m+[m[31m-[m
+ src/heos/strategy/engine.py                        |   3 [32m+[m[31m-[m
+ src/heos/strategy/factory.py                       |  10 [32m+[m[31m-[m
+ src/heos/strategy/serialization.py                 |   3 [32m+[m[31m-[m
+ tests/conftest.py                                  |   2 [32m+[m[31m-[m
+ tests/test_action_contract.py                      |   1 [31m-[m
+ tests/test_calibration_contract.py                 |   4 [32m+[m[31m-[m
+ tests/test_calibration_engine.py                   |   4 [32m+[m[31m-[m
+ tests/test_coordination_state.py                   |   1 [31m-[m
+ tests/test_core.py                                 |   1 [32m+[m
+ tests/test_decision_compiler.py                    |   1 [32m+[m
+ tests/test_decision_consolidation_contract.py      |   8 [32m+[m[31m-[m
+ tests/test_decision_feedback_contract.py           |   8 [32m+[m[31m-[m
+ tests/test_decision_memory_contract.py             |   4 [32m+[m[31m-[m
+ tests/test_decision_query_contract.py              |   6 [32m+[m[31m-[m
+ tests/test_decision_rank_contract.py               |   4 [32m+[m[31m-[m
+ tests/test_decision_recommadation_contract.py      |   6 [32m+[m[31m-[m
+ tests/test_digital_twin.py                         |  10 [32m+[m[31m-[m
+ tests/test_energy_resource_model.py                |   9 [32m+[m[31m-[m
+ tests/test_execution_runtime.py                    |   1 [32m+[m
+ tests/test_execution_supervisor.py                 |  26 [32m+[m[31m-[m
+ tests/test_feedback_engine.py                      |  19 [32m+[m[31m-[m
+ tests/test_feedback_runtime_bridge.py              |   4 [32m+[m[31m-[m
+ tests/test_forecast_core.py                        |   3 [32m+[m[31m-[m
+ tests/test_house_memory.py                         |   2 [32m+[m[31m-[m
+ tests/test_house_state.py                          |  11 [32m+[m[31m-[m
+ tests/test_house_state_api.py                      |   1 [31m-[m
+ tests/test_learning_bridge_contract.py             |  11 [32m+[m[31m-[m
+ tests/test_learning_memory_contract.py             |   4 [32m+[m[31m-[m
+ tests/test_learning_rank_contract.py               |   4 [32m+[m[31m-[m
+ tests/test_learning_retrieval_contract.py          |   4 [32m+[m[31m-[m
+ tests/test_learning_similarity_contract.py         |   4 [32m+[m[31m-[m
+ tests/test_operational_release_gate.py             |   7 [32m+[m[31m-[m
+ tests/test_outcome_verifier.py                     |   4 [32m+[m[31m-[m
+ tests/test_proof_carrying_decisions.py             |   2 [32m+[m[31m-[m
+ tests/test_reality_observation_contract.py         |   2 [32m+[m[31m-[m
+ tests/test_result_verification.py                  |  36 [32m+[m[31m--[m
+ tests/test_strategy_engine.py                      |   2 [32m+[m[31m-[m
+ tests/test_strategy_models_contract.py             |   6 [32m+[m[31m-[m
+ tests/test_workflow_1100_final.py                  |   1 [31m-[m
+ tests/test_workflow_consistency.py                 |   1 [31m-[m
+ tests/test_workflow_contract.py                    |   1 [31m-[m
+ tests/test_workflow_invariants.py                  |   1 [31m-[m
+ tests/test_workflow_progression.py                 |   1 [31m-[m
+ tests/test_workflow_regression.py                  |   1 [31m-[m
+ tests/tests_reality_observation_contract.py        |   2 [32m+[m[31m-[m
+ 141 files changed, 635 insertions(+), 535 deletions(-)

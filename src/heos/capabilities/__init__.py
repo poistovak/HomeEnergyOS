@@ -5,7 +5,7 @@ from .registry import CapabilityRegistry
 __all__ = [
     "Capability",
     "CapabilityMetadata",
+    "CapabilityRegistry",
     "EnergyProducerCapability",
     "ProducerState",
-    "CapabilityRegistry",
 ]

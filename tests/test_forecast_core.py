@@ -10,7 +10,6 @@ from heos.forecast import (
     StaticForecastProvider,
 )
 
-
 START = datetime(2026, 7, 14, 10, 0, tzinfo=UTC)
 MIDDLE = START + timedelta(minutes=30)
 END = START + timedelta(hours=1)
@@ -63,7 +62,7 @@ def test_series_interpolates_value() -> None:
 def test_series_rejects_naive_timestamp() -> None:
     with pytest.raises(ValueError, match="timezone-aware"):
         ForecastPoint(
-            datetime(2026, 7, 14, 10, 0),
+            datetime(2026, 7, 14, 10, 0),  # noqa: DTZ001
             1000,
         )
 

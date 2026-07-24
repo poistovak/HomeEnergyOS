@@ -1,7 +1,7 @@
 from datetime import UTC, datetime
 
-from heos.execution import ExecutionJournalEntry, ExecutionStatus as RuntimeExecutionStatus
-from heos.execution import RuntimeReport
+from heos.execution import ExecutionJournalEntry, RuntimeReport
+from heos.execution import ExecutionStatus as RuntimeExecutionStatus
 from heos.feedback import ActionRecord, ExecutionStatus
 from heos.feedback.runtime_bridge import (
     actions_from_runtime_report,

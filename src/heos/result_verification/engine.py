@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass, field
-from typing import Iterable
 
 from .ledger import VerificationLedger
 from .models import Observation, ResultExpectation, VerificationDecision

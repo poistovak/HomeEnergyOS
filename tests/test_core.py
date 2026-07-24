@@ -1,5 +1,6 @@
 from heos.core import DeviceRecord, DeviceRegistry, Event, EventBus, HEOSKernel
 
+
 def test_kernel_tick() -> None:
     kernel = HEOSKernel(
         state_provider=lambda: {"pv_w": 5000},

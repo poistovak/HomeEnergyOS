@@ -91,15 +91,15 @@ class StandardStrategyFactory:
         )
 
     def _comfort_power(self, disturbance: object, target_c: float) -> float:
-        outdoor = float(getattr(disturbance, "outdoor_temp_c"))
-        solar = float(getattr(disturbance, "solar_gain_kw"))
-        internal = float(getattr(disturbance, "internal_gain_kw"))
+        outdoor = float(disturbance.outdoor_temp_c)
+        solar = float(disturbance.solar_gain_kw)
+        internal = float(disturbance.internal_gain_kw)
         heat_loss = self._parameters.heat_loss_kw_per_c * (target_c - outdoor)
         return max(0.0, heat_loss - solar - internal)
 
     def _self_consumption_power(self, disturbance: object) -> float:
-        pv = float(getattr(disturbance, "pv_kw"))
-        load = float(getattr(disturbance, "base_load_kw"))
+        pv = float(disturbance.pv_kw)
+        load = float(disturbance.base_load_kw)
         surplus = pv - load
         if surplus >= 0.0:
             return min(surplus, self._parameters.battery_max_charge_kw)

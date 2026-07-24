@@ -5,8 +5,6 @@ from datetime import UTC, datetime, timedelta
 
 import pytest
 
-from heos.feedback.models import OutcomeClassification
-from heos.memory.models import PatternSummary
 from heos.digital_twin import (
     ConstraintCode,
     ConstraintViolation,
@@ -27,6 +25,8 @@ from heos.digital_twin import (
     loads_trace,
     thermal_flow,
 )
+from heos.feedback.models import OutcomeClassification
+from heos.memory.models import PatternSummary
 
 NOW = datetime(2026, 7, 15, 12, 0, tzinfo=UTC)
 HOUR = timedelta(hours=1)
@@ -63,6 +63,8 @@ def state(**overrides: float | datetime) -> TwinState:
         "ev_soc": 0.25,
     }
     values.update(overrides)
+
+   
     return TwinState(**values)  # type: ignore[arg-type]
 
 
@@ -522,7 +524,7 @@ def test_simulate_rejects_naive_generated_time() -> None:
             [TwinControl()],
             [disturbance()],
             step_duration=HOUR,
-            generated_at=datetime(2026, 7, 15),
+            generated_at=datetime(2026, 7, 15)  # noqa: DTZ001
         )
 
 
@@ -608,7 +610,7 @@ def test_trace_serialization_round_trip() -> None:
         metadata=(("scenario", "sunny"),),
     )
     assert loads_trace(dumps_trace(trace)) == trace
-
+         
 
 def test_state_is_frozen() -> None:
     item = state()

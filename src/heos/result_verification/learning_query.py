@@ -15,16 +15,10 @@ class LearningQuery:
         self,
         record: LearningRecord,
     ) -> bool:
-        if self.command_id is not None:
-            if record.command_id != self.command_id:
-                return False
+        if self.command_id is not None and record.command_id != self.command_id:
+            return False
 
-        if self.prediction_id is not None:
-            if record.prediction_id != self.prediction_id:
-                return False
+        if self.prediction_id is not None and record.prediction_id != self.prediction_id:
+            return False
 
-        if self.success is not None:
-            if record.success != self.success:
-                return False
-
-        return True
+        return not (self.success is not None and record.success != self.success)

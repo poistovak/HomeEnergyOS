@@ -20,7 +20,4 @@ class LearningSimilarity:
         ) > self.expected_value_delta:
             return False
 
-        if self.success_match and not record.success:
-            return False
-
-        return True
+        return not (self.success_match and not record.success)

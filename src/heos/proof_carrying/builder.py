@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Iterable
 from dataclasses import replace
 from datetime import datetime
-from typing import Any, Iterable
+from typing import Any
 
 from .canonical import canonical_json, normalize_versions, sha256_hex
 from .claims import evaluate_claims

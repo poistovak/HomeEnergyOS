@@ -16,15 +16,14 @@ from .models import (
     ExecutionIntent,
     GateCode,
     GateResult,
-    OperationMode,
     OperationalRequest,
+    OperationMode,
     ReadinessEvidence,
     ReleaseDecision,
     ReleasePolicy,
     ReleaseStatus,
     mode_rank,
 )
-
 
 _READINESS_GATES = (
     ("forecast_ready", GateCode.FORECAST_READY),
@@ -149,7 +148,7 @@ class OperationalReleaseGate:
         request: OperationalRequest,
     ) -> None:
         decision = request.strategy_decision
-        generated_at = getattr(decision, "generated_at")
+        generated_at = decision.generated_at
         age = request.evaluated_at - generated_at
         freshness_passed = (
             age <= self._policy.maximum_decision_age
@@ -169,7 +168,7 @@ class OperationalReleaseGate:
         )
 
         selected = selected_evaluation(decision)
-        feasible = bool(getattr(selected, "feasible"))
+        feasible = bool(selected.feasible)
         feasibility_passed = feasible or not self._policy.require_feasible
         gates.append(
             GateResult(
@@ -183,7 +182,7 @@ class OperationalReleaseGate:
         )
 
         metrics = selected_metrics(decision)
-        score = float(getattr(metrics, "objective_score"))
+        score = float(metrics.objective_score)
         maximum_score = self._policy.maximum_objective_score
         score_passed = maximum_score is None or score <= maximum_score
         gates.append(
@@ -199,8 +198,8 @@ class OperationalReleaseGate:
             )
         )
 
-        violation_count = int(getattr(metrics, "violation_count"))
-        violation_magnitude = float(getattr(metrics, "violation_magnitude"))
+        violation_count = int(metrics.violation_count)
+        violation_magnitude = float(metrics.violation_magnitude)
         zero_violations = violation_count == 0 and violation_magnitude == 0.0
         violation_passed = zero_violations or not self._policy.require_zero_violations
         gates.append(
@@ -237,7 +236,7 @@ class OperationalReleaseGate:
             )
         )
 
-        policy_version = str(getattr(decision, "policy_version"))
+        policy_version = str(decision.policy_version)
         policy_version_passed = (
             not self._policy.allowed_policy_versions
             or policy_version in self._policy.allowed_policy_versions
@@ -255,7 +254,7 @@ class OperationalReleaseGate:
             )
         )
 
-        parameter_version = str(getattr(decision, "parameter_version"))
+        parameter_version = str(decision.parameter_version)
         parameter_version_passed = (
             not self._policy.allowed_parameter_versions
             or parameter_version in self._policy.allowed_parameter_versions
@@ -358,7 +357,7 @@ class OperationalReleaseGate:
         source_decision_id: str,
     ) -> ExecutionIntent:
         candidate = selected_candidate(request.strategy_decision)
-        controls = tuple(getattr(candidate, "controls"))
+        controls = tuple(candidate.controls)
         first_control = controls[0]
         payload = control_payload(first_control)
         intent_id = str(uuid5(NAMESPACE_URL, f"heos-intent:{release_id}"))
@@ -366,7 +365,7 @@ class OperationalReleaseGate:
         return ExecutionIntent(
             intent_id=intent_id,
             source_decision_id=source_decision_id,
-            candidate_id=str(getattr(candidate, "candidate_id")),
+            candidate_id=str(candidate.candidate_id),
             requested_mode=request.requested_mode,
             created_at=request.evaluated_at,
             not_after=request.evaluated_at + self._policy.maximum_decision_age,

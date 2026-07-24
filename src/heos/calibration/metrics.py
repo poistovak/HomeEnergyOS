@@ -1,14 +1,14 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import timedelta
-from typing import Iterable
 
 from heos.digital_twin import DigitalTwin, TwinParameters
 
 from .models import (
-    CalibrationMetricScales,
     CalibrationMetrics,
+    CalibrationMetricScales,
     CalibrationMetricWeights,
     CalibrationSample,
 )

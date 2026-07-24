@@ -1,10 +1,10 @@
 from datetime import UTC, datetime, timedelta
 
 from heos.calibration import (
+    CalibratableParameter,
     CalibrationMetricWeights,
     CalibrationPolicy,
     CalibrationSample,
-    CalibratableParameter,
     DigitalTwinCalibrator,
     ParameterBounds,
 )

@@ -1,10 +1,10 @@
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import StrEnum
 from types import MappingProxyType
-from typing import Mapping
 
 from heos.feedback.models import OutcomeClassification, VersionStamp
 
@@ -63,9 +63,7 @@ class NumericRange:
         value = float(value)
         if self.minimum is not None and value < self.minimum:
             return False
-        if self.maximum is not None and value > self.maximum:
-            return False
-        return True
+        return not (self.maximum is not None and value > self.maximum)
 
 
 @dataclass(frozen=True, slots=True)

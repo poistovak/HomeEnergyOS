@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from pathlib import Path
-import json
 
 from heos.infrastructure.home_assistant.models import EntityMap
 
@@ -14,7 +14,7 @@ class RealHomeConfig:
     dry_run: bool = True
 
     @classmethod
-    def from_json(cls, path: str | Path) -> "RealHomeConfig":
+    def from_json(cls, path: str | Path) -> RealHomeConfig:
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
         return cls(
             entity_map=EntityMap(**raw["entities"]),

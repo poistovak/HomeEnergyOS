@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from datetime import UTC, datetime
+
 from .canonical import sha256_hex
 from .claims import evaluate_claims
 from .integrity import certificate_fingerprint, certificate_id_for

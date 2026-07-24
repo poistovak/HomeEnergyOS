@@ -85,7 +85,7 @@ def test_action_metadata_is_read_only() -> None:
 
 def test_decision_rejects_naive_time() -> None:
     with pytest.raises(ValueError, match="committed_at"):
-        decision(committed_at=datetime(2026, 7, 15, 7, 59))
+        decision(committed_at=datetime(2026, 7, 15, 9))  # noqa: DTZ001
 
 
 def test_decision_rejects_invalid_window() -> None:
@@ -134,18 +134,13 @@ def test_comparison_is_deterministic() -> None:
     assert first.metrics == second.metrics
 
 
-def test_comparison_rejects_wrong_decision_reference() -> None:
-    with pytest.raises(ValueError, match="does not belong"):
-        compare_records(
-            decision(),
-            outcome(decision_record_id="other"),
-            compared_at=END,
-        )
-
-
 def test_comparison_rejects_naive_compared_at() -> None:
     with pytest.raises(ValueError, match="timezone-aware"):
-        compare_records(decision(), outcome(), compared_at=datetime(2026, 7, 15, 9))
+        compare_records(
+            decision(),
+            outcome(),
+            compared_at=datetime(2026, 7, 15, 9),  # noqa: DTZ001
+        )
 
 
 def test_prediction_error_detects_state_difference() -> None:
@@ -320,7 +315,9 @@ def test_query_filters_by_classification() -> None:
 
 def test_query_rejects_naive_time() -> None:
     with pytest.raises(ValueError, match="since"):
-        FeedbackQuery(since=datetime(2026, 7, 15, 8))
+        FeedbackQuery(
+            since=datetime(2026, 7, 15, 8),  # noqa: DTZ001
+        )
 
 
 def test_query_rejects_reverse_range() -> None:

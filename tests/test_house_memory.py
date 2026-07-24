@@ -117,7 +117,7 @@ def test_memory_record_sorts_and_deduplicates_tags() -> None:
 
 def test_memory_record_rejects_naive_time() -> None:
     with pytest.raises(ValueError, match="timezone-aware"):
-        replace(remembered(), remembered_at=datetime(2026, 7, 15))
+        replace(remembered(), remembered_at=datetime(2026, 7, 15))  # noqa: DTZ001
 
 
 def test_memory_query_rejects_invalid_quality() -> None:

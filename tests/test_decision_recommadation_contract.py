@@ -1,11 +1,11 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from heos.result_verification import (
     DecisionMemory,
-    DecisionMemoryRecord,
     DecisionMemoryQuery,
     DecisionMemoryRanker,
     DecisionMemoryRecommender,
+    DecisionMemoryRecord,
     DecisionQuery,
 )
 
@@ -22,7 +22,7 @@ def test_recommends_best_decision():
             expected_value=5000,
             actual_value=4900,
             success=True,
-            created_at=datetime.now(timezone.utc),
+            created_at=datetime.now(UTC),
         )
     )
 

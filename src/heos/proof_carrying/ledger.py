@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections.abc import Iterable
 
 from .integrity import certificate_fingerprint, certificate_id_for
-from .models import ChainAuditIssue, ChainAuditReport, CertifiedDecision
+from .models import CertifiedDecision, ChainAuditIssue, ChainAuditReport
 
 
 def audit_chain(records: Iterable[CertifiedDecision]) -> ChainAuditReport:
