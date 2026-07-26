@@ -73,7 +73,7 @@ def sunny_surplus_scenario() -> DemoScenario:
             candidate_id="solar-ev",
             name="Use solar surplus for EV charging",
             controls=(
-                TwinControl(ev_charge_kw=3.6),
+                TwinControl(ev_charge_kw=2.0),
                 TwinControl(ev_charge_kw=3.6),
                 TwinControl(ev_charge_kw=2.0),
                 TwinControl(),
@@ -87,8 +87,8 @@ def sunny_surplus_scenario() -> DemoScenario:
             controls=(
                 TwinControl(battery_power_kw=4.0),
                 TwinControl(battery_power_kw=4.0),
-                TwinControl(battery_power_kw=-2.0),
-                TwinControl(battery_power_kw=-2.0),
+                TwinControl(battery_power_kw=2.0),
+                TwinControl(battery_power_kw=2.0),
             ),
             objective=StrategyObjective.RESERVE,
             tags=("battery", "reserve"),

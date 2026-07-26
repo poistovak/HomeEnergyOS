@@ -173,7 +173,7 @@ class DigitalTwin:
         metadata: Iterable[tuple[str, str]] = (),
         require_feasible: bool = False,
     ) -> TwinTrace:
-        print("DEBUG generated_at =", generated_at, "tzinfo =", generated_at.tzinfo)
+        
         if generated_at.tzinfo is None or generated_at.utcoffset() is None:
             raise ValueError("generated_at must be timezone-aware")
         control_steps = tuple(controls)

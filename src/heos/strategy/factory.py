@@ -100,12 +100,22 @@ class StandardStrategyFactory:
     def _self_consumption_power(self, disturbance: object) -> float:
         pv = float(disturbance.pv_kw)
         load = float(disturbance.base_load_kw)
+
         surplus = pv - load
+
         if surplus >= 0.0:
-            return min(surplus, self._parameters.battery_max_charge_kw)
-        return -min(-surplus, self._parameters.battery_max_discharge_kw)
+            return min(
+                surplus,
+                self._parameters.battery_max_charge_kw,
+            )
+
+        return -min(
+            -surplus,
+            self._parameters.battery_max_discharge_kw,
+        )
 
     def _reserve_power(self, request: StrategyRequest) -> float:
         if request.initial_state.battery_soc >= self._policy.reserve_battery_soc:
             return 0.0
+
         return self._parameters.battery_max_charge_kw

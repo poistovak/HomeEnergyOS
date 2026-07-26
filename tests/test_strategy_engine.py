@@ -206,7 +206,7 @@ def test_request_rejects_zero_duration() -> None:
 
 def test_request_rejects_naive_generated_at() -> None:
     with pytest.raises(ValueError, match="timezone-aware"):
-        request(generated_at=datetime(2026, 7, 15, 18, 0, tzinfo=UTC))
+        request(generated_at=datetime(2026, 7, 15, 18, 0))
 
 
 def test_request_expands_single_tariff() -> None:

@@ -7,6 +7,17 @@ from types import SimpleNamespace
 
 import pytest
 
+from heos.result_verification.autonomy_admission import (
+    AutonomyAdmissionGate,
+    AutonomyAdmissionStatus,
+)
+from heos.result_verification.decision_confidence_gate import (
+    DecisionConfidenceGate,
+)
+from heos.result_verification.reasoning_orchestrator import (
+    ReasoningResult,
+)
+
 from heos.release_gate import (
     ComponentVersion,
     ExecutionIntent,
@@ -517,3 +528,72 @@ def test_standard_manifest_is_complete_and_sorted() -> None:
     assert tuple(name for name, _ in system_manifest.versions) == tuple(
         sorted(name for name, _ in system_manifest.versions)
     )
+
+
+def test_high_confidence_does_not_bypass_autonomy_authorization() -> None:
+    admission_gate = AutonomyAdmissionGate(
+        confidence_gate=DecisionConfidenceGate(
+            minimum_confidence=0.6,
+        )
+    )
+
+    admission = admission_gate.evaluate(
+        ReasoningResult(
+            decision="charge_battery",
+            confidence=1.0,
+        )
+    )
+
+    assert admission.status is AutonomyAdmissionStatus.ADMITTED
+    assert admission.admitted is True
+
+    policy = ReleasePolicy(
+        maximum_mode=OperationMode.AUTONOMOUS,
+    )
+
+    release = OperationalReleaseGate(policy).review(
+        request(
+            mode=OperationMode.AUTONOMOUS,
+            operator_approved=True,
+            autonomy_authorized=False,
+        )
+    )
+
+    assert release.status is ReleaseStatus.HELD
+    assert release.released is False
+    assert release.intent is None
+
+
+def test_high_confidence_with_authorization_may_be_released() -> None:
+    admission_gate = AutonomyAdmissionGate(
+        confidence_gate=DecisionConfidenceGate(
+            minimum_confidence=0.6,
+        )
+    )
+
+    admission = admission_gate.evaluate(
+        ReasoningResult(
+            decision="charge_battery",
+            confidence=1.0,
+        )
+    )
+
+    assert admission.status is AutonomyAdmissionStatus.ADMITTED
+    assert admission.admitted is True
+
+    policy = ReleasePolicy(
+        maximum_mode=OperationMode.AUTONOMOUS,
+    )
+
+    release = OperationalReleaseGate(policy).review(
+        request(
+            mode=OperationMode.AUTONOMOUS,
+            operator_approved=True,
+            autonomy_authorized=True,
+        )
+    )
+
+    assert release.status is ReleaseStatus.RELEASED
+    assert release.released is True
+    assert release.intent is not None
+    assert release.intent.requested_mode is OperationMode.AUTONOMOUS

@@ -158,11 +158,12 @@ class TwinControl:
         if self.hvac_thermal_kw < 0:
             raise ValueError("hvac_thermal_kw must be non-negative")
 
-        if self.battery_power_kw < 0:
-            raise ValueError("battery_power_kw must be non-negative")
+        if not isinstance(self.battery_power_kw, (int, float)):
+            raise ValueError("battery_power_kw must be numeric")
 
         if self.pv_curtailment_kw < 0:
             raise ValueError("pv_curtailment_kw must be non-negative")
+
    
 @dataclass(frozen=True, slots=True)
 class TwinDisturbance:

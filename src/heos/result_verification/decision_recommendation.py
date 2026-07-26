@@ -38,10 +38,17 @@ class DecisionMemoryRecommender:
             return None
 
         ranked = self.ranker.rank(records)
-
         best = ranked[0]
+
+        successful = sum(
+            1
+            for record in records
+            if record.success
+        )
+
+        confidence = successful / len(records)
 
         return DecisionRecommendation(
             decision=best.record.decision,
-            confidence=best.score,
+            confidence=confidence,
         )

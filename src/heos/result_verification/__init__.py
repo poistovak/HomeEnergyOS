@@ -1,3 +1,27 @@
+from .context_decision_recommendation import (
+    ContextAwareDecisionRecommender,
+)
+from .decision_experience import (
+    DecisionExperience,
+    DecisionExperienceMemory,
+)
+from .decision_memory_bridge import (
+    DecisionMemoryBridge,
+)
+from .experience_reasoner import (
+    ExperienceReasoner,
+)
+from .learning_bridge import (
+    LearningBridge,
+)
+from .learning_recorder import (
+    LearningRecorder,
+)
+from .weighted_evidence import (
+    Evidence,
+    WeightedEvidence,
+    WeightedEvidenceEngine,
+)
 from .adaptation_strategy import (
     AdaptationDecision,
     AdaptationStrategyEngine,
@@ -228,4 +252,14 @@ __all__ = [
     "VerificationDecision",
     "VerificationLedger",
     "VerificationStatus"
+    "ContextAwareDecisionRecommender",
+    "DecisionExperience",
+    "DecisionExperienceMemory",
+    "DecisionMemoryBridge",
+    "Evidence",
+    "ExperienceReasoner",
+    "LearningBridge",
+    "LearningRecorder",
+    "WeightedEvidence",
+    "WeightedEvidenceEngine",
 ]

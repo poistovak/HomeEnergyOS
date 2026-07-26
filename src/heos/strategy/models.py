@@ -77,15 +77,18 @@ class ComfortBand:
     def __post_init__(self) -> None:
         minimum = _finite(self.minimum_c, "minimum_c")
         maximum = _finite(self.maximum_c, "maximum_c")
+
         if maximum <= minimum:
-            raise ValueError("maximum_c must be greater than minimum_c")
+            raise ValueError(
+                "maximum_c must be greater than minimum_c"
+            )
+
         object.__setattr__(self, "minimum_c", minimum)
         object.__setattr__(self, "maximum_c", maximum)
 
     @property
     def midpoint_c(self) -> float:
         return (self.minimum_c + self.maximum_c) / 2.0
-
 
 @dataclass(frozen=True, slots=True)
 class StrategyCandidate:

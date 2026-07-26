@@ -31,7 +31,7 @@ def test_learning_record_requires_prediction_id():
             expected_value=1.0,
             actual_value=1.0,
             success=True,
-            timestamp=datetime.now(UTC),
+            timestamp=datetime.now(),
         )
 
 
@@ -55,5 +55,5 @@ def test_learning_record_requires_timezone():
             expected_value=1.0,
             actual_value=1.0,
             success=True,
-            timestamp=datetime.now(UTC),
+            timestamp=datetime.now(),
         )
