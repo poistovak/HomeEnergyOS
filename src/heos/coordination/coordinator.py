@@ -1,5 +1,7 @@
 ﻿from __future__ import annotations
 
+from dataclasses import replace
+
 from heos.coordination.autonomy_controller import (
     AutonomyController,
     AutonomyControlResult,
@@ -61,3 +63,42 @@ class CoordinationCoordinator:
             context.state = CoordinationState.FAILED.value
 
         return result
+
+    def resume_with_approval(
+        self,
+        context: CoordinationContext,
+        *,
+        controller: AutonomyController,
+        request: OperationalRequest,
+        operator_approved: bool | None = None,
+        autonomy_authorized: bool | None = None,
+    ) -> AutonomyControlResult:
+        """Re-evaluate a held release after approval state changes."""
+        current = CoordinationState(context.state)
+
+        if current is not CoordinationState.VALIDATING:
+            raise ValueError(
+                "approval resume requires VALIDATING state"
+            )
+
+        updated_request = replace(
+            request,
+            operator_approved=(
+                request.operator_approved
+                if operator_approved is None
+                else operator_approved
+            ),
+            autonomy_authorized=(
+                request.autonomy_authorized
+                if autonomy_authorized is None
+                else autonomy_authorized
+            ),
+        )
+
+        context.metadata["approval_resume"] = True
+
+        return self.authorize_execution(
+            context,
+            controller=controller,
+            request=updated_request,
+        )
