@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from collections.abc import Mapping
@@ -147,14 +147,14 @@ def trace_to_dict(trace: TwinTrace) -> dict[str, Any]:
 def trace_from_dict(data: Mapping[str, Any]) -> TwinTrace:
     raw_steps = data["steps"]
     if not isinstance(raw_steps, list):
-        raise ValueError("steps must be a list")
+        raise TypeError("steps must be a list")
     steps: list[TwinStepResult] = []
     for raw in raw_steps:
         if not isinstance(raw, Mapping):
-            raise ValueError("each step must be a mapping")
+            raise TypeError("each step must be a mapping")
         raw_violations = raw["violations"]
         if not isinstance(raw_violations, list):
-            raise ValueError("violations must be a list")
+            raise TypeError("violations must be a list")
         violations = tuple(
             ConstraintViolation(
                 code=ConstraintCode(str(item["code"])),
@@ -207,5 +207,6 @@ def dumps_trace(trace: TwinTrace) -> str:
 def loads_trace(payload: str) -> TwinTrace:
     data = json.loads(payload)
     if not isinstance(data, Mapping):
-        raise ValueError("trace JSON must contain an object")
+        raise TypeError("trace JSON must contain an object")
     return trace_from_dict(data)
+

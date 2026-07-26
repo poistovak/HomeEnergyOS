@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from collections.abc import Mapping
@@ -82,7 +82,7 @@ def report_to_dict(report: CalibrationReport) -> dict[str, Any]:
 def report_from_dict(data: Mapping[str, Any]) -> CalibrationReport:
     raw_estimates = data["estimates"]
     if not isinstance(raw_estimates, list):
-        raise ValueError("estimates must be a list")
+        raise TypeError("estimates must be a list")
     estimates = tuple(
         ParameterEstimate(
             parameter=CalibratableParameter(str(item["parameter"])),
@@ -130,5 +130,6 @@ def dumps_report(report: CalibrationReport) -> str:
 def loads_report(payload: str) -> CalibrationReport:
     data = json.loads(payload)
     if not isinstance(data, Mapping):
-        raise ValueError("calibration JSON must contain an object")
+        raise TypeError("calibration JSON must contain an object")
     return report_from_dict(data)
+

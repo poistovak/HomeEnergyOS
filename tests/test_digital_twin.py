@@ -125,7 +125,9 @@ def test_parameters_reject_reversed_indoor_bounds() -> None:
 
 def test_state_rejects_naive_time() -> None:
     with pytest.raises(ValueError, match="timezone-aware"):
-        state(observed_at=datetime(2026, 7, 15, 12, 0))
+        state(
+            observed_at=datetime(2026, 7, 15, 12, 0),  # noqa: DTZ001
+        )
 
 
 def test_state_rejects_invalid_soc() -> None:

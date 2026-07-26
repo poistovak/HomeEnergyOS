@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from typing import Any
@@ -25,5 +25,6 @@ def proof_policy_json(policy: ProofPolicy) -> str:
 def parse_policy_json(value: str) -> dict[str, Any]:
     payload = json.loads(value)
     if not isinstance(payload, dict):
-        raise ValueError("proof policy JSON must contain an object")
+        raise TypeError("proof policy JSON must contain an object")
     return payload
+

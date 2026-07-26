@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from collections.abc import Mapping
@@ -38,7 +38,7 @@ def _candidate_to_dict(candidate: StrategyCandidate) -> dict[str, Any]:
 def _candidate_from_dict(data: Mapping[str, Any]) -> StrategyCandidate:
     raw_controls = data["controls"]
     if not isinstance(raw_controls, list):
-        raise ValueError("controls must be a list")
+        raise TypeError("controls must be a list")
     controls = tuple(
         TwinControl(**{key: float(value) for key, value in dict(item).items()})
         for item in raw_controls
@@ -93,7 +93,7 @@ def decision_to_dict(decision: StrategyDecision) -> dict[str, Any]:
 def decision_from_dict(data: Mapping[str, Any]) -> StrategyDecision:
     raw_alternatives = data["alternatives"]
     if not isinstance(raw_alternatives, list):
-        raise ValueError("alternatives must be a list")
+        raise TypeError("alternatives must be a list")
     alternatives = tuple(_evaluation_from_dict(item) for item in raw_alternatives)
     selected_id = str(data["selected_candidate_id"])
     try:
@@ -118,5 +118,6 @@ def dumps_decision(decision: StrategyDecision) -> str:
 def loads_decision(payload: str) -> StrategyDecision:
     data = json.loads(payload)
     if not isinstance(data, Mapping):
-        raise ValueError("strategy JSON must contain an object")
+        raise TypeError("strategy JSON must contain an object")
     return decision_from_dict(data)
+

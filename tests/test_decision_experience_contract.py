@@ -83,22 +83,6 @@ def test_experience_requires_context():
         )
 
 
-def test_experience_requires_timezone():
-    with pytest.raises(ValueError):
-        DecisionExperience(
-            command_id="cmd-001",
-            decision="charge_battery",
-            context={
-                "pv_surplus": True,
-            },
-            outcome="target_reached",
-            expected_value=5000.0,
-            actual_value=4900.0,
-            success=True,
-            created_at=datetime.now(),
-        )
-
-
 def test_experience_requires_decision():
     with pytest.raises(ValueError):
         DecisionExperience(

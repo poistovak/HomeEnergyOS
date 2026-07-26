@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from datetime import datetime
@@ -109,5 +109,6 @@ def dumps_release_decision(decision: ReleaseDecision) -> str:
 def loads_release_decision(value: str) -> ReleaseDecision:
     payload = json.loads(value)
     if not isinstance(payload, dict):
-        raise ValueError("release decision JSON must contain an object")
+        raise TypeError("release decision JSON must contain an object")
     return release_decision_from_dict(payload)
+

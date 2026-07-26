@@ -47,6 +47,7 @@ def test_observation_requires_timezone():
         Observation(
             target="pv_power_w",
             value=100.0,
-            observed_at=datetime.now(),
+            # tests/test_reality_observation_contract.py
+            observed_at=datetime.now(),  # noqa: DTZ005
             source="sensor",
         )

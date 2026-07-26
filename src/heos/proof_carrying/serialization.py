@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from datetime import datetime
@@ -116,5 +116,6 @@ def dumps_certified_decision(decision: CertifiedDecision) -> str:
 def loads_certified_decision(value: str) -> CertifiedDecision:
     payload = json.loads(value)
     if not isinstance(payload, dict):
-        raise ValueError("certified decision JSON must contain an object")
+        raise TypeError("certified decision JSON must contain an object")
     return certified_decision_from_dict(payload)
+

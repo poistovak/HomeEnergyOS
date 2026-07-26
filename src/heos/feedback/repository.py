@@ -13,7 +13,6 @@ from .models import (
     _require_aware,
 )
 
-
 RecordT = TypeVar(
     "RecordT",
     DecisionRecord,
@@ -57,11 +56,14 @@ class FeedbackQuery:
                     _require_aware(value, name),
                 )
 
-        if self.since is not None and self.until is not None:
-            if self.until < self.since:
-                raise ValueError(
-                    "until must not be before since"
-                )
+        if (
+           self.since is not None
+           and self.until is not None
+           and self.until < self.since
+        ):
+           raise ValueError(
+               "until must not be before since"
+           )
 
 
 class InMemoryFeedbackRepository:

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Protocol
+from typing import ClassVar, Protocol
 
 from heos.compiler.execution_step import StepType
 from heos.kernel import KernelHealth
@@ -97,7 +97,7 @@ class RequiredVerificationRule:
 
     rule_id = "required_verification"
 
-    _write_steps = {
+    _write_steps: ClassVar[set[StepType]] = {
         StepType.SET_CURRENT,
     }
 

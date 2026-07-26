@@ -127,7 +127,7 @@ def test_bridge_requires_timezone_aware_timestamp():
             prediction_id="pred-001",
             expectation=make_expectation(),
             decision=make_decision(),
-            timestamp=datetime.now(),
+            timestamp=datetime.now(),  # noqa: DTZ005
         )
 
 

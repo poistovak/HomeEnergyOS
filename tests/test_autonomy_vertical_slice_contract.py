@@ -41,7 +41,6 @@ from heos.safety import (
     SafetyVerdict,
 )
 
-
 NOW = datetime(2026, 7, 15, 18, 0, tzinfo=UTC)
 
 

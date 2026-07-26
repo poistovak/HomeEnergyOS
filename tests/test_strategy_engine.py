@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from dataclasses import FrozenInstanceError
 from datetime import UTC, datetime, timedelta
@@ -206,7 +206,10 @@ def test_request_rejects_zero_duration() -> None:
 
 def test_request_rejects_naive_generated_at() -> None:
     with pytest.raises(ValueError, match="timezone-aware"):
-        request(generated_at=datetime(2026, 7, 15, 18, 0))
+        # tests/test_strategy_engine.py
+         request(
+             generated_at=datetime(2026, 7, 15, 18, 0),  # noqa: DTZ001
+)
 
 
 def test_request_expands_single_tariff() -> None:
@@ -534,7 +537,7 @@ def test_decision_from_dict_rejects_missing_selected_candidate() -> None:
 
 
 def test_loads_decision_rejects_non_object() -> None:
-    with pytest.raises(ValueError, match="object"):
+    with pytest.raises(TypeError, match="object"):
         loads_decision("[]")
 
 
@@ -563,3 +566,4 @@ def test_policy_is_frozen() -> None:
     item = StrategyPolicy()
     with pytest.raises(FrozenInstanceError):
         item.version = "changed"  # type: ignore[misc]
+

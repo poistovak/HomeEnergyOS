@@ -7,17 +7,6 @@ from types import SimpleNamespace
 
 import pytest
 
-from heos.result_verification.autonomy_admission import (
-    AutonomyAdmissionGate,
-    AutonomyAdmissionStatus,
-)
-from heos.result_verification.decision_confidence_gate import (
-    DecisionConfidenceGate,
-)
-from heos.result_verification.reasoning_orchestrator import (
-    ReasoningResult,
-)
-
 from heos.release_gate import (
     ComponentVersion,
     ExecutionIntent,
@@ -39,6 +28,16 @@ from heos.release_gate import (
     loads_release_decision,
     mode_rank,
     standard_manifest,
+)
+from heos.result_verification.autonomy_admission import (
+    AutonomyAdmissionGate,
+    AutonomyAdmissionStatus,
+)
+from heos.result_verification.decision_confidence_gate import (
+    DecisionConfidenceGate,
+)
+from heos.result_verification.reasoning_orchestrator import (
+    ReasoningResult,
 )
 
 NOW = datetime(2026, 7, 15, 18, 0, tzinfo=UTC)

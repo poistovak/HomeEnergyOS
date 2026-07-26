@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from collections.abc import Mapping
@@ -34,7 +34,7 @@ def _summary_from_dict(data: Mapping[str, Any]) -> RobustnessSummary:
 def _variant_from_dict(data: Mapping[str, Any]) -> VariantEvaluation:
     raw = data["perturbation"]
     if not isinstance(raw, Mapping):
-        raise ValueError("perturbation must be an object")
+        raise TypeError("perturbation must be an object")
     return VariantEvaluation(
         variant_id=str(data["variant_id"]),
         perturbation=Perturbation(
@@ -62,12 +62,12 @@ def run_from_dict(data: Mapping[str, Any]) -> RobustnessRun:
     raw_certificate = data["certificate"]
     raw_variants = data["variants"]
     if not isinstance(raw_certificate, Mapping):
-        raise ValueError("certificate must be an object")
+        raise TypeError("certificate must be an object")
     if not isinstance(raw_variants, list):
-        raise ValueError("variants must be a list")
+        raise TypeError("variants must be a list")
     raw_metadata = raw_certificate.get("metadata", {})
     if not isinstance(raw_metadata, Mapping):
-        raise ValueError("metadata must be an object")
+        raise TypeError("metadata must be an object")
     certificate = RobustnessCertificate(
         certificate_id=str(raw_certificate["certificate_id"]),
         generated_at=datetime.fromisoformat(str(raw_certificate["generated_at"])),
@@ -97,5 +97,6 @@ def dumps_run(run: RobustnessRun, *, indent: int | None = None) -> str:
 def loads_run(payload: str) -> RobustnessRun:
     data = json.loads(payload)
     if not isinstance(data, Mapping):
-        raise ValueError("robustness JSON must contain an object")
+        raise TypeError("robustness JSON must contain an object")
     return run_from_dict(data)
+

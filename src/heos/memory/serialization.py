@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from collections.abc import Mapping
@@ -76,5 +76,6 @@ def dumps_record(record: HouseMemoryRecord) -> str:
 def loads_record(payload: str) -> HouseMemoryRecord:
     decoded = json.loads(payload)
     if not isinstance(decoded, dict):
-        raise ValueError("memory record must be a JSON object")
+        raise TypeError("memory record must be a JSON object")
     return record_from_dict(decoded)
+

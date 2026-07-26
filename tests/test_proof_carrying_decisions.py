@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 from dataclasses import dataclass, replace
@@ -420,7 +420,7 @@ def test_serialization_is_deterministic() -> None:
 
 
 def test_serialization_rejects_nonobject() -> None:
-    with pytest.raises(ValueError, match="object"):
+    with pytest.raises(TypeError, match="object"):
         loads_certified_decision("[]")
 
 
@@ -648,3 +648,4 @@ def test_verification_report_counts_claims() -> None:
     decision = build()
     report = verify(decision)
     assert report.checked_claims == len(decision.certificate.claims)
+

@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from dataclasses import FrozenInstanceError, replace
 from datetime import UTC, datetime, timedelta
@@ -248,7 +248,8 @@ def test_calibrator_rejects_naive_generated_time() -> None:
             parameters(),
             [sample_from(parameters())],
             [ParameterBounds(CalibratableParameter.HVAC_COP, 2.0, 6.0)],
-            generated_at=datetime(2026, 7, 15, 9),
+            # tests/test_calibration_engine.py
+            generated_at=datetime(2026, 7, 15, 9),  # noqa: DTZ001
         )
 
 
@@ -535,6 +536,7 @@ def test_serialization_round_trip_with_validation() -> None:
         generated_at=NOW,
         validation_samples=[sample_from(parameters(), sample_id="validation")],
     )
+
     assert loads_report(dumps_report(report)) == report
 
 
@@ -549,7 +551,7 @@ def test_serialization_is_deterministic() -> None:
 
 
 def test_loads_rejects_non_object_json() -> None:
-    with pytest.raises(ValueError, match="object"):
+    with pytest.raises(TypeError, match="object"):
         loads_report("[]")
 
 
@@ -641,3 +643,4 @@ def test_explanation_states_advisory_boundary() -> None:
     )
     assert "does not activate parameters" in report.explanation
     assert "does not" in report.explanation
+

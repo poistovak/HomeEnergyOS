@@ -31,7 +31,8 @@ def test_learning_record_requires_prediction_id():
             expected_value=1.0,
             actual_value=1.0,
             success=True,
-            timestamp=datetime.now(),
+            # tests/test_learning_bridge_contract.py
+            timestamp=datetime.now(),  # noqa: DTZ005
         )
 
 
@@ -55,5 +56,6 @@ def test_learning_record_requires_timezone():
             expected_value=1.0,
             actual_value=1.0,
             success=True,
-            timestamp=datetime.now(),
+            # tests/test_learning_bridge_contract.py
+            timestamp=datetime.now(),  # noqa: DTZ005
         )

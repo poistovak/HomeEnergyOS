@@ -296,7 +296,7 @@ def test_pretty_json_is_valid(quick_run):
 
 
 def test_loads_rejects_non_object():
-    with pytest.raises(ValueError):
+    with pytest.raises(TypeError):
         loads_run("[]")
 
 

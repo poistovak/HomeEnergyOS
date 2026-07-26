@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import itertools
 from dataclasses import dataclass, field
@@ -159,7 +159,7 @@ class TwinControl:
             raise ValueError("hvac_thermal_kw must be non-negative")
 
         if not isinstance(self.battery_power_kw, (int, float)):
-            raise ValueError("battery_power_kw must be numeric")
+            raise TypeError("battery_power_kw must be numeric")
 
         if self.pv_curtailment_kw < 0:
             raise ValueError("pv_curtailment_kw must be non-negative")
@@ -315,3 +315,4 @@ class TwinTrace:
     @property
     def total_grid_export_kwh(self) -> float:
         return self.final_state.grid_export_kwh - self.initial_state.grid_export_kwh
+

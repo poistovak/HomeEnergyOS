@@ -1,10 +1,12 @@
-﻿from heos.coordination.state import CoordinationState
+﻿from typing import ClassVar
+
+from heos.coordination.state import CoordinationState
 
 
 class Workflow:
     """Defines valid state transitions for one coordination cycle."""
 
-    _TRANSITIONS = {
+    _TRANSITIONS: ClassVar[dict[CoordinationState, CoordinationState]] = {
         CoordinationState.CREATED: CoordinationState.PLANNING,
         CoordinationState.PLANNING: CoordinationState.ARBITRATING,
         CoordinationState.ARBITRATING: CoordinationState.VALIDATING,

@@ -1,27 +1,3 @@
-from .context_decision_recommendation import (
-    ContextAwareDecisionRecommender,
-)
-from .decision_experience import (
-    DecisionExperience,
-    DecisionExperienceMemory,
-)
-from .decision_memory_bridge import (
-    DecisionMemoryBridge,
-)
-from .experience_reasoner import (
-    ExperienceReasoner,
-)
-from .learning_bridge import (
-    LearningBridge,
-)
-from .learning_recorder import (
-    LearningRecorder,
-)
-from .weighted_evidence import (
-    Evidence,
-    WeightedEvidence,
-    WeightedEvidenceEngine,
-)
 from .adaptation_strategy import (
     AdaptationDecision,
     AdaptationStrategyEngine,
@@ -37,6 +13,9 @@ from .causal_relationship import (
 from .constraint_reasoning import (
     ConstraintReasoningEngine,
     ConstraintResult,
+)
+from .context_decision_recommendation import (
+    ContextAwareDecisionRecommender,
 )
 from .context_matching import (
     ContextMatch,
@@ -66,6 +45,10 @@ from .decision_evolution import (
     DecisionEvolution,
     DecisionEvolutionEngine,
 )
+from .decision_experience import (
+    DecisionExperience,
+    DecisionExperienceMemory,
+)
 from .decision_explanation import (
     DecisionExplanation,
     DecisionExplanationEngine,
@@ -77,6 +60,9 @@ from .decision_feedback import (
 from .decision_memory import (
     DecisionMemory,
     DecisionMemoryRecord,
+)
+from .decision_memory_bridge import (
+    DecisionMemoryBridge,
 )
 from .decision_orchestrator import (
     DecisionIntelligenceOrchestrator,
@@ -115,6 +101,9 @@ from .experience_ranking import (
     ExperienceRankingEngine,
     RankedExperience,
 )
+from .experience_reasoner import (
+    ExperienceReasoner,
+)
 from .experience_retrieval import (
     ExperienceMatch,
     ExperienceRetrievalEngine,
@@ -128,9 +117,15 @@ from .goal_strategy import (
     GoalStrategyEngine,
 )
 from .learning import LearningRecord
+from .learning_bridge import (
+    LearningBridge,
+)
 from .learning_feedback_loop import (
     FeedbackResult,
     LearningFeedbackLoopEngine,
+)
+from .learning_recorder import (
+    LearningRecorder,
 )
 from .ledger import VerificationLedger
 from .memory import LearningMemory
@@ -170,6 +165,11 @@ from .strategy_memory import (
     StrategyMemoryEngine,
 )
 from .verifier import ResultVerifier
+from .weighted_evidence import (
+    Evidence,
+    WeightedEvidence,
+    WeightedEvidenceEngine,
+)
 
 __all__ = [
     "AdaptationDecision",
@@ -180,6 +180,7 @@ __all__ = [
     "ConsolidatedDecisionMemory",
     "ConstraintReasoningEngine",
     "ConstraintResult",
+    "ContextAwareDecisionRecommender",
     "ContextMatch",
     "ContextMatcher",
     "ContextSimilarity",
@@ -192,12 +193,15 @@ __all__ = [
     "DecisionContextMemory",
     "DecisionEvolution",
     "DecisionEvolutionEngine",
+    "DecisionExperience",
+    "DecisionExperienceMemory",
     "DecisionExplanation",
     "DecisionExplanationEngine",
     "DecisionFeedback",
     "DecisionFeedbackMemory",
     "DecisionIntelligenceOrchestrator",
     "DecisionMemory",
+    "DecisionMemoryBridge",
     "DecisionMemoryConsolidator",
     "DecisionMemoryQuery",
     "DecisionMemoryRanker",
@@ -213,8 +217,10 @@ __all__ = [
     "DecisionTrust",
     "DecisionTrustDecayEngine",
     "DecisionTrustEngine",
+    "Evidence",
     "ExperienceMatch",
     "ExperienceRankingEngine",
+    "ExperienceReasoner",
     "ExperienceRetrievalEngine",
     "ExperienceSynthesis",
     "ExperienceSynthesisEngine",
@@ -222,10 +228,12 @@ __all__ = [
     "GoalStrategy",
     "GoalStrategyEngine",
     "ImprovementProposal",
+    "LearningBridge",
     "LearningFeedbackLoopEngine",
     "LearningMemory",
     "LearningRank",
     "LearningRecord",
+    "LearningRecorder",
     "LearningRetrieval",
     "LearningSignal",
     "LearningSimilarity",
@@ -251,15 +259,7 @@ __all__ = [
     "VerificationAction",
     "VerificationDecision",
     "VerificationLedger",
-    "VerificationStatus"
-    "ContextAwareDecisionRecommender",
-    "DecisionExperience",
-    "DecisionExperienceMemory",
-    "DecisionMemoryBridge",
-    "Evidence",
-    "ExperienceReasoner",
-    "LearningBridge",
-    "LearningRecorder",
+    "VerificationStatus",
     "WeightedEvidence",
     "WeightedEvidenceEngine",
 ]

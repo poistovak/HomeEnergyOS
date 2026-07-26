@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Iterable
+from typing import ClassVar
 
 from .context import SafetyContext
 from .models import (
@@ -22,7 +23,7 @@ from .rules import (
 class SafetyEngine:
     """Search for reasons why a plan must not execute."""
 
-    _priority = {
+    _priority: ClassVar[dict[SafetyVerdict, int]] = {
         SafetyVerdict.ALLOW: 0,
         SafetyVerdict.RETRY_LATER: 1,
         SafetyVerdict.DENY: 2,
