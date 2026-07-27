@@ -1,10 +1,13 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import UTC, datetime, timedelta
+
+import pytest
 
 from heos.coordination import (
     AutonomyController,
+    CoordinationAuditRecord,
     CoordinationAuditTrail,
     CoordinationContext,
     CoordinationState,
@@ -327,3 +330,149 @@ def test_records_returns_immutable_snapshot():
 
     assert isinstance(records, tuple)
     assert len(records) == 1
+
+
+def test_first_record_has_no_previous_digest():
+    trail = CoordinationAuditTrail()
+
+    trail.issue_and_append(
+        cycle_id="chain-1",
+        requested_mode="autonomous",
+        effective_mode="advise",
+        downgraded=True,
+        operator_approved=False,
+        autonomy_authorized=False,
+        release_status="released",
+        release_id="release-1",
+        recorded_at=NOW,
+    )
+
+    record = trail.records()[0]
+
+    assert record.previous_digest is None
+    assert record.verify() is True
+
+
+def test_second_record_links_to_first_digest():
+    trail = CoordinationAuditTrail()
+
+    first = trail.issue_and_append(
+        cycle_id="chain-2",
+        requested_mode="autonomous",
+        effective_mode="supervised",
+        downgraded=True,
+        operator_approved=False,
+        autonomy_authorized=False,
+        release_status="held",
+        release_id="release-1",
+        recorded_at=NOW,
+    )
+
+    second = trail.issue_and_append(
+        cycle_id="chain-2",
+        requested_mode="autonomous",
+        effective_mode="supervised",
+        downgraded=True,
+        operator_approved=True,
+        autonomy_authorized=False,
+        release_status="released",
+        release_id="release-2",
+        approval_resume=True,
+        recorded_at=NOW + timedelta(seconds=1),
+    )
+
+    assert second.previous_digest == first.digest
+    assert second.verify() is True
+
+
+def test_valid_audit_chain_verifies():
+    trail = CoordinationAuditTrail()
+
+    trail.issue_and_append(
+        cycle_id="chain-3",
+        requested_mode="autonomous",
+        effective_mode="supervised",
+        downgraded=True,
+        operator_approved=False,
+        autonomy_authorized=False,
+        release_status="held",
+        release_id="release-1",
+        recorded_at=NOW,
+    )
+
+    trail.issue_and_append(
+        cycle_id="chain-3",
+        requested_mode="autonomous",
+        effective_mode="supervised",
+        downgraded=True,
+        operator_approved=True,
+        autonomy_authorized=False,
+        release_status="released",
+        release_id="release-2",
+        approval_resume=True,
+        recorded_at=NOW + timedelta(seconds=1),
+    )
+
+    assert trail.verify_chain() is True
+
+
+def test_append_rejects_invalid_digest():
+    trail = CoordinationAuditTrail()
+
+    record = CoordinationAuditRecord.issue(
+        cycle_id="chain-4",
+        requested_mode="autonomous",
+        effective_mode="advise",
+        downgraded=True,
+        operator_approved=False,
+        autonomy_authorized=False,
+        release_status="released",
+        release_id="release-1",
+        recorded_at=NOW,
+    )
+
+    tampered = replace(
+        record,
+        digest="0" * 64,
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="invalid coordination audit record",
+    ):
+        trail.append(tampered)
+
+
+def test_append_rejects_wrong_previous_digest():
+    trail = CoordinationAuditTrail()
+
+    trail.issue_and_append(
+        cycle_id="chain-5",
+        requested_mode="autonomous",
+        effective_mode="advise",
+        downgraded=True,
+        operator_approved=False,
+        autonomy_authorized=False,
+        release_status="released",
+        release_id="release-1",
+        recorded_at=NOW,
+    )
+
+    record = CoordinationAuditRecord.issue(
+        cycle_id="chain-5",
+        requested_mode="autonomous",
+        effective_mode="advise",
+        downgraded=True,
+        operator_approved=False,
+        autonomy_authorized=False,
+        release_status="released",
+        release_id="release-2",
+        recorded_at=NOW + timedelta(seconds=1),
+        previous_digest=None,
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="chain mismatch",
+    ):
+        trail.append(record)
