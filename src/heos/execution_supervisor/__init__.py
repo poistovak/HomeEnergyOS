@@ -10,6 +10,7 @@ from .models import (
     ExecutionStatus,
 )
 from .policy import ExecutionPolicy
+from .reconciliation import ExecutionRestartReconciler
 
 __all__ = [
     "ApprovalToken",
@@ -18,6 +19,7 @@ __all__ = [
     "ExecutionCommand",
     "ExecutionLedger",
     "ExecutionPolicy",
+    "ExecutionRestartReconciler",
     "ExecutionStatus",
     "ExecutionSupervisor",
 ]
