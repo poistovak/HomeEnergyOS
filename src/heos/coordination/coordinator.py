@@ -2,6 +2,10 @@
 
 from dataclasses import replace
 
+from heos.coordination.audit import (
+    CoordinationAuditRecord,
+    CoordinationAuditTrail,
+)
 from heos.coordination.autonomy_controller import (
     AutonomyController,
     AutonomyControlResult,
@@ -14,6 +18,17 @@ from heos.release_gate import OperationalRequest, ReleaseStatus
 
 class CoordinationCoordinator:
     """Coordinates one HEOS decision cycle."""
+
+    def __init__(
+        self,
+        *,
+        audit_trail: CoordinationAuditTrail | None = None,
+    ) -> None:
+        self.audit_trail = (
+            audit_trail
+            if audit_trail is not None
+            else CoordinationAuditTrail()
+        )
 
     def start(
         self,
@@ -56,6 +71,25 @@ class CoordinationCoordinator:
         context.metadata["autonomy_downgraded"] = result.downgraded
         context.metadata["release_status"] = result.release.status.value
         context.metadata["release_id"] = result.release.release_id
+
+        self.audit_trail.append(
+            CoordinationAuditRecord(
+                cycle_id=context.cycle_id,
+                requested_mode=result.mode_result.requested_mode.value,
+                effective_mode=result.mode_result.effective_mode.value,
+                downgraded=result.downgraded,
+                operator_approved=request.operator_approved,
+                autonomy_authorized=request.autonomy_authorized,
+                release_status=result.release.status.value,
+                release_id=result.release.release_id,
+                approval_resume=bool(
+                    context.metadata.get(
+                        "approval_resume",
+                        False,
+                    )
+                ),
+            )
+        )
 
         if result.release.status is ReleaseStatus.RELEASED:
             context.state = CoordinationState.EXECUTING.value
