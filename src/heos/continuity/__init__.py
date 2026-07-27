@@ -1,4 +1,5 @@
 from .engine import ContinuityGovernor
+from .execution_bridge import ContinuityExecutionBridge
 from .ledger import ContinuityLedger
 from .models import (
     ContinuityCertificate,
@@ -11,6 +12,7 @@ from .policy import ContinuityPolicy
 
 __all__ = [
     "ContinuityCertificate",
+    "ContinuityExecutionBridge",
     "ContinuityGovernor",
     "ContinuityLedger",
     "ContinuityPlan",
