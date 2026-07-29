@@ -9,6 +9,7 @@ from .models import (
     ExecutionCommand,
     ExecutionStatus,
 )
+from .outcome_reconciliation import ExecutionOutcomeReconciler
 from .policy import ExecutionPolicy
 from .reconciliation import ExecutionRestartReconciler
 
@@ -18,6 +19,7 @@ __all__ = [
     "ExecutionCertificate",
     "ExecutionCommand",
     "ExecutionLedger",
+    "ExecutionOutcomeReconciler",
     "ExecutionPolicy",
     "ExecutionRestartReconciler",
     "ExecutionStatus",
